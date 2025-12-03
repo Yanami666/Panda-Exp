@@ -1,0 +1,230 @@
+using UnityEngine;
+
+public class SudokuBoardWorld : MonoBehaviour
+{
+    [Header("格子预制体（SudokuCellWorld）")]
+    public SudokuCellWorld cellPrefab;
+
+    [Header("棋盘起点（左上角世界坐标）")]
+    public Vector2 topLeft = new Vector2(-4.0f, 4.0f);
+
+    [Header("格子间距（中心到中心）")]
+    public float cellSize = 0.9f;
+
+    [Header("解出数独后要显示的纸条对象")]
+    public GameObject noteObject;   // 拖 Note1234 进来
+
+    public SudokuCellWorld[,] cells = new SudokuCellWorld[9, 9];
+
+    // 当前选中的格子
+    private SudokuCellWorld currentSelected;
+
+    // 是否已经解出（解出后禁止继续修改）
+    private bool isSolved = false;
+
+    // ====== 你的数独题目（0 表示空格）======
+    private int[,] puzzle = new int[9, 9]
+    {
+        {0,0,3, 0,0,0, 2,0,0},
+        {0,6,0, 9,8,0, 0,4,3},
+        {4,9,0, 0,3,1, 0,0,6},
+
+        {9,0,7, 0,0,0, 8,6,0},
+        {0,4,0, 0,9,8, 0,0,0},
+        {0,0,5, 4,0,7, 1,0,9},
+
+        {6,0,0, 0,0,3, 9,0,5},
+        {5,0,8, 1,0,0, 0,7,2},
+        {2,0,9, 0,5,6, 0,3,8}
+    };
+
+    // ====== 对应的正确解（用来检测是否解对）======
+    private int[,] solution = new int[9, 9]
+    {
+        {8,5,3, 6,7,4, 2,9,1},
+        {7,6,1, 9,8,2, 5,4,3},
+        {4,9,2, 5,3,1, 7,8,6},
+
+        {9,2,7, 3,1,5, 8,6,4},
+        {1,4,6, 2,9,8, 3,5,7},
+        {3,8,5, 4,6,7, 1,2,9},
+
+        {6,7,4, 8,2,3, 9,1,5},
+        {5,3,8, 1,4,9, 6,7,2},
+        {2,1,9, 7,5,6, 4,3,8}
+    };
+    // =====================================
+
+    private void Start()
+    {
+        GenerateBoard();
+
+        // 纸条一开始要隐藏
+        if (noteObject != null)
+            noteObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        HandleMouseClick();
+        HandleKeyboardInput();
+    }
+
+    private void GenerateBoard()
+    {
+        for (int r = 0; r < 9; r++)
+        {
+            for (int c = 0; c < 9; c++)
+            {
+                Vector2 pos = new Vector2(
+                    topLeft.x + c * cellSize,
+                    topLeft.y - r * cellSize
+                );
+
+                SudokuCellWorld newCell =
+                    Instantiate(cellPrefab, pos, Quaternion.identity, transform);
+
+                newCell.name = $"Cell_{r}_{c}";
+                cells[r, c] = newCell;
+
+                int startValue = puzzle[r, c];
+                bool isGiven = startValue != 0;
+                newCell.Init(startValue, isGiven);
+            }
+        }
+    }
+
+    private void HandleMouseClick()
+    {
+        if (isSolved) return; // 解出后不再响应点击
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mouseScreen = Input.mousePosition;
+
+            // depth = 相机到 z=0 的距离（相机在 z=-10 -> depth=10）
+            float depth = -Camera.main.transform.position.z;
+
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(
+                new Vector3(mouseScreen.x, mouseScreen.y, depth)
+            );
+
+            Vector2 point = new Vector2(mouseWorld.x, mouseWorld.y);
+
+            Collider2D hit = Physics2D.OverlapPoint(point);
+
+            if (hit != null)
+            {
+                SudokuCellWorld cell = hit.GetComponent<SudokuCellWorld>();
+                if (cell != null)
+                {
+                    SelectCell(cell);
+                }
+            }
+        }
+    }
+
+    private void HandleKeyboardInput()
+    {
+        if (isSolved) return; // 解出后不再响应输入
+
+        if (currentSelected == null) return;
+        if (currentSelected.isGiven) return;
+
+        bool changed = false;
+
+        // 1-9 输入
+        for (int i = 1; i <= 9; i++)
+        {
+            if (Input.GetKeyDown(i.ToString()))
+            {
+                currentSelected.SetValue(i);
+                changed = true;
+                break;
+            }
+        }
+
+        // 清空：0 / Backspace / Delete
+        if (Input.GetKeyDown(KeyCode.Backspace) ||
+            Input.GetKeyDown(KeyCode.Delete) ||
+            Input.GetKeyDown(KeyCode.Alpha0) ||
+            Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            currentSelected.SetValue(0);
+            changed = true;
+        }
+
+        // 如果这次输入有改变，就检查是否解对
+        if (changed)
+        {
+            CheckSolved();
+        }
+    }
+
+    private void SelectCell(SudokuCellWorld newCell)
+    {
+        // 题目格子不允许被选中（不变色）
+        if (newCell.isGiven)
+        {
+            return;
+        }
+
+        if (currentSelected != null && currentSelected != newCell)
+        {
+            currentSelected.SetSelected(false);
+        }
+
+        currentSelected = newCell;
+        currentSelected.SetSelected(true);
+    }
+
+    private void CheckSolved()
+    {
+        if (IsSolved())
+        {
+            isSolved = true;
+
+            // 取消当前选中的高亮
+            if (currentSelected != null)
+            {
+                currentSelected.SetSelected(false);
+                currentSelected = null;
+            }
+
+            // 把所有格子隐藏
+            for (int r = 0; r < 9; r++)
+            {
+                for (int c = 0; c < 9; c++)
+                {
+                    if (cells[r, c] != null)
+                    {
+                        cells[r, c].gameObject.SetActive(false);
+                    }
+                }
+            }
+
+            // 显示纸条 1234
+            if (noteObject != null)
+            {
+                noteObject.SetActive(true);
+            }
+
+            Debug.Log("Sudoku solved! 显示 1234 纸条。");
+        }
+    }
+
+    private bool IsSolved()
+    {
+        // 只要有一个格子与 solution 不一样，就没解对
+        for (int r = 0; r < 9; r++)
+        {
+            for (int c = 0; c < 9; c++)
+            {
+                int v = cells[r, c].value;
+                if (v != solution[r, c])
+                    return false;
+            }
+        }
+        return true;
+    }
+}
