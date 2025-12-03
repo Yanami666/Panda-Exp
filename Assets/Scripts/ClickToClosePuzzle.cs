@@ -24,10 +24,13 @@ public class ClickToClosePuzzle : MonoBehaviour
             puzzleRoot.SetActive(false);
         }
 
-        // ✨ 关闭 puzzle 时恢复相机移动
+        // 🔓 恢复相机移动（如果你之前有）
         if (cameraPan != null)
         {
             cameraPan.canPan = true;
         }
+
+        // ✅ 标记：现在没有 puzzle 了，可以再次点击其他 square
+        PuzzleManager.puzzleOpen = false;
     }
 }
