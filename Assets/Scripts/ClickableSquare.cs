@@ -27,6 +27,10 @@ public class ClickableSquare : MonoBehaviour
 
     void OnMouseDown()
     {
+        // 🚫 如果当前有 puzzle 打开，直接忽略所有 square 的点击
+        if (PuzzleManager.puzzleOpen)
+            return;
+
         Debug.Log("Clicked: " + gameObject.name);
 
         if (sr != null)
@@ -34,13 +38,11 @@ public class ClickableSquare : MonoBehaviour
 
         if (objectToActivate != null)
         {
-            // ⭐ 在激活之前，把 puzzle 挪到当前相机中心
+            // 移动到当前相机中心这一段如果你有，就保留：
             Camera cam = Camera.main;
             if (cam != null)
             {
                 Vector3 camPos = cam.transform.position;
-
-                // 保留原来的 Z（避免跑到相机里去看不到）
                 Vector3 newPos = objectToActivate.transform.position;
                 newPos.x = camPos.x;
                 newPos.y = camPos.y;
@@ -50,10 +52,13 @@ public class ClickableSquare : MonoBehaviour
             objectToActivate.SetActive(true);
         }
 
-        // 锁住相机
+        // 🔒 锁相机（如果你之前有）
         if (cameraPan != null)
         {
             cameraPan.canPan = false;
         }
+
+        // ✅ 标记：现在有 puzzle 打开了
+        PuzzleManager.puzzleOpen = true;
     }
 }

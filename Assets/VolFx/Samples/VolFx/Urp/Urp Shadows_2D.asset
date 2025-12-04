@@ -285,8 +285,8 @@ MonoBehaviour:
   m_Name: Comics
   m_EditorClassIdentifier: 
   _active: 1
-  _shader: {fileID: 0}
-  _ditherTex: {fileID: 0}
+  _shader: {fileID: 4800000, guid: f97628ee99a0e10418407fba82d232cb, type: 3}
+  _ditherTex: {fileID: 2800000, guid: e470306b2a0935842a3dc6bdc1f3e813, type: 3}
 --- !u!114 &-6718439891295309787
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: Warp
   m_EditorClassIdentifier: 
   _active: 1
-  _shader: {fileID: 0}
+  _shader: {fileID: 4800000, guid: c8ad0a2f4d91daa428cc0448e8687944, type: 3}
   _maskPower: 2
 --- !u!114 &-4087369987367878777
 MonoBehaviour:
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Name: Jpeg
   m_EditorClassIdentifier: 
   _active: 1
-  _shader: {fileID: 0}
+  _shader: {fileID: 4800000, guid: c87cb70bbf7424448b290759a6e27a96, type: 3}
 --- !u!114 &-2444572399665932362
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -507,6 +507,9 @@ MonoBehaviour:
   - {fileID: 4402921922530051674}
   m_RendererFeatureMap: 5a062f2e29521a3d
   m_UseNativeRenderPass: 0
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_TransparencySortMode: 0
   m_TransparencySortAxis: {x: 0, y: 1, z: 0}
   m_HDREmulationScale: 1
@@ -887,7 +890,7 @@ MonoBehaviour:
     - {fileID: 8136809060951887187}
     - {fileID: 5751908815294258515}
     - {fileID: 6224388432119938236}
-    - {fileID: -8519829960866941013}
+    - {fileID: 0}
     - {fileID: -6718439891295309787}
     - {fileID: -4489833879492871121}
     - {fileID: -3497589594812239238}

@@ -1,148 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9204289595374251147
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b112dda1e626fd4994e8b9c5b84df3e, type: 3}
-  m_Name: Adjustments
-  m_EditorClassIdentifier: VolFx::VolFx.AdjustmentsPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: f3f2512ee1fe3774ba15927559ebdd5d, type: 3}
---- !u!114 &-8899461251932688489
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc333b15d5e54546b9236a93044a3ee, type: 3}
-  m_Name: Jpeg
-  m_EditorClassIdentifier: VolFx::VolFx.JpegPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: c87cb70bbf7424448b290759a6e27a96, type: 3}
---- !u!114 &-8650388069301080584
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74b100ac26964d4caf6d0e26acf977bc, type: 3}
-  m_Name: Scanlines
-  m_EditorClassIdentifier: VolFx::VolFx.ScanlinesPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: 80f8a891f2f2ddb43b3992b8bfe31d7f, type: 3}
-  _move:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 0
-    m_RotationOrder: 4
-  _movePeriod: 5
-  _flickerCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1.1597
-      outSlope: 1.1597
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.2274
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1.5078
-      outSlope: 1.5078
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.2807
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 0
-    m_RotationOrder: 4
-  _flickerPeriod: 1.2
-  _gradRange: {x: 0.07, y: 3}
-  _flickerMove: {x: 0.2, y: 3}
-  _flipCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _flipRelease: 0.1
-  _forceCount:
-    enabled: 0
-    value: 570
---- !u!114 &-8146083689371876240
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d855550e46694270a49d1d1d670f411c, type: 3}
-  m_Name: Mask
-  m_EditorClassIdentifier: VolFx::VolFx.MaskPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: 428ef3a835824a688c5b1034981fecf9, type: 3}
-  _mode: 0
-  _useVolumeSettings: 1
-  _persistent: 0
-  _weight: 1
-  _mask: {fileID: 0}
-  _showInInspector: 0
---- !u!114 &-7652981207727374343
+--- !u!114 &-9175297960856283141
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -340,7 +198,7 @@ MonoBehaviour:
   - _audio: {fileID: 8300000, guid: 0cd16cc3ec9c6764a92c2b2bd029573c, type: 3}
   - _audio: {fileID: 8300000, guid: c99a484cd6b915f4087a45277c1d42ac, type: 3}
   - _audio: {fileID: 8300000, guid: bf48bc9e7e3ea1c4b94a886bb19bb56d, type: 3}
---- !u!114 &-6812093304073725677
+--- !u!114 &-8470507415226888812
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,12 +207,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c8d156cebe46b383a5291e7e5d4ba2, type: 3}
-  m_Name: Color Map
-  m_EditorClassIdentifier: VolFx::VolFx.ColorMapPass
+  m_Script: {fileID: 11500000, guid: 5b112dda1e626fd4994e8b9c5b84df3e, type: 3}
+  m_Name: Adjustments
+  m_EditorClassIdentifier: VolFx::VolFx.AdjustmentsPass
   _active: 1
-  _shader: {fileID: 4800000, guid: 5c8038ea0b6f4d94abca9e7bf5c15beb, type: 3}
---- !u!114 &-6393711826040793488
+  _shader: {fileID: 4800000, guid: f3f2512ee1fe3774ba15927559ebdd5d, type: 3}
+--- !u!114 &-8464025988925750807
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,15 +221,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a4a3c9fc53e47eeb28b368324d7020f, type: 3}
-  m_Name: Flow
-  m_EditorClassIdentifier: VolFx::VolFx.FlowPass
+  m_Script: {fileID: 11500000, guid: abf1dc9f250f44cdac2b649e3c7e3889, type: 3}
+  m_Name: Grain
+  m_EditorClassIdentifier: VolFx::VolFx.GrainPass
   _active: 1
-  _shader: {fileID: 4800000, guid: 3fc4e2bbb04b44788d407966b1b80a45, type: 3}
-  _fps: 60
-  _scale: 0.5
-  _hdr: 0
---- !u!114 &-6010360457797892638
+  _shader: {fileID: 4800000, guid: 818caa6126f9d414eb0665f96ee8a7dc, type: 3}
+  _grain: 2
+  _grainTex:
+  - {fileID: 2800000, guid: 7541986b93a62994e94815edfe712921, type: 3}
+  - {fileID: 2800000, guid: a15fa6e666dfd2b42a2601f9ba4305b9, type: 3}
+  - {fileID: 2800000, guid: 73ad0d32b5522d54ab220ac4d69cf9cf, type: 3}
+  - {fileID: 2800000, guid: c3085ad123782bd419925400d3ed7936, type: 3}
+  - {fileID: 2800000, guid: 071beb00a0a037a4da0b0316246c08bb, type: 3}
+  - {fileID: 2800000, guid: 9e571517d66178d4fb7d25b64101fceb, type: 3}
+  - {fileID: 2800000, guid: 4a38babe1216af748a4d03100ca86b29, type: 3}
+  - {fileID: 2800000, guid: 2d47b2e1e54f9ed40ad6ea7d2f8bade0, type: 3}
+  - {fileID: 2800000, guid: 9485bc6a96023904c81c6d360043df74, type: 3}
+  - {fileID: 2800000, guid: d7af5dd6cba23e744a255c071297ae5c, type: 3}
+  - {fileID: 2800000, guid: 2cb163f37e9b5b24ea6a80fb26d1dcb0, type: 3}
+  - {fileID: 2800000, guid: 8a0824da1995cd648bcdb663180f186d, type: 3}
+  _grainClamp: 0.5
+--- !u!114 &-6894982343910717153
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41cd2a60ad2e44a2926a745d3badfdef, type: 3}
+  m_Name: Slice
+  m_EditorClassIdentifier: VolFx::VolFx.SlicePass
+  _active: 1
+  _shader: {fileID: 4800000, guid: eecc13e7dfb840cca948414bfb3cbc79, type: 3}
+--- !u!114 &-6573590740288132413
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8f4db9a2fd4f108b1374528137ff26, type: 3}
+  m_Name: Distort
+  m_EditorClassIdentifier: VolFx::VolFx.DistortPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: 9c32f8d52c844eaab1fc42000e1eef87, type: 3}
+  _motionMul: 1
+--- !u!114 &-5861421916213478347
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -385,7 +284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: VolFx.Samples::VolFx.GrayscalePass
   _active: 1
   _shader: {fileID: 4800000, guid: fc78cc8bb01197248b8a758ee38592b9, type: 3}
---- !u!114 &-4150198055955317567
+--- !u!114 &-5619302062235946367
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -394,44 +293,379 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14ba4625d5562404f9f843158bcce61c, type: 3}
-  m_Name: Pixelation
-  m_EditorClassIdentifier: VolFx::VolFx.PixelationPass
+  m_Script: {fileID: 11500000, guid: ae100a1d916453841bc76a898164e07d, type: 3}
+  m_Name: Glitch
+  m_EditorClassIdentifier: VolFx::VolFx.GlitchPass
   _active: 1
-  _shader: {fileID: 4800000, guid: b6e6d026c1bad65479771f106c52fc5b, type: 3}
-  _scaleLerp:
+  _shader: {fileID: 4800000, guid: 6e12feb5d935b5d4592800a7747a4083, type: 3}
+  _crushPix: 720
+  _clipSpeed: 15
+  _chaoticPeriod:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.0049
-      inSlope: 0.0508
-      outSlope: 0.0508
+      value: 0.4698
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 3
       inWeight: 0
-      outWeight: 0.742
+      outWeight: 0.3333
     - serializedVersion: 3
       time: 1
-      value: 0.5095
-      inSlope: 3.6093
-      outSlope: 3.6093
+      value: 1
+      inSlope: 1
+      outSlope: 1
       tangentMode: 0
       weightedMode: 3
-      inWeight: 0.1646
+      inWeight: 0.3333
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _gridReveal: 0.25
-  _gridDiscrete: 0
-  _absolute: 1
-  _roundnessDefault: 1
-  _crispDefault: 0
-  _palette:
-    enabled: 0
-    value: {fileID: 0}
---- !u!114 &-2990307906988837729
+  _chaoticImpact:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.3333
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.3333
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _periodMax:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.3333
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 1
+      outWeight: 1
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _periodMin:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -0.0542
+      outSlope: -0.0542
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.3333
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _lockMax:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.0481
+      inSlope: 0.9518
+      outSlope: 0.9518
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.3333
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.9518
+      outSlope: 0.9518
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.3333
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _noiseScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.018
+      inSlope: 0.9819
+      outSlope: 0.9819
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.3333
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.9819
+      outSlope: 0.9819
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.3333
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _crushLerp:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -5.7671
+      outSlope: -5.7671
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.1525
+    - serializedVersion: 3
+      time: 1
+      value: 0.1397
+      inSlope: -0.254803
+      outSlope: -0.2548
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.4444
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _gridScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.0241
+      inSlope: 0.1746
+      outSlope: 0.17
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.33
+    - serializedVersion: 3
+      time: 1
+      value: 0.1987
+      inSlope: 0.1746
+      outSlope: 0.1746
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.33
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _crushCorrection: {x: 4, y: 2}
+  _lockCorrection: {x: 2, y: 1}
+  _clipTex:
+  - {fileID: 2800000, guid: 5b7315d0fadccd44cbeebc5f6d66f558, type: 3}
+  - {fileID: 2800000, guid: 95bb028ae4d2faa4d9d2cbcb96de72b5, type: 3}
+  - {fileID: 2800000, guid: 6249b0e373a79874fb97a964814bd824, type: 3}
+  - {fileID: 2800000, guid: 677c02f0e9a625842b9d45c86301d68a, type: 3}
+  - {fileID: 2800000, guid: a4d802a08298f2b42a9482a922ea98a6, type: 3}
+  - {fileID: 2800000, guid: fdccebeaea0ccc34b97b97ee8360967c, type: 3}
+  - {fileID: 2800000, guid: 887ade08f7fc51f4fb94386d3e3b1a5b, type: 3}
+  - {fileID: 2800000, guid: be227f8364ee9284fb015f7c8f4c9203, type: 3}
+  - {fileID: 2800000, guid: 2962676d3761b924488d272ec973b367, type: 3}
+  - {fileID: 2800000, guid: c9de242e0ae6dd4468609eea58df9638, type: 3}
+  - {fileID: 2800000, guid: 6085d1a394efe0a4f9a7e7fc9398bac5, type: 3}
+  - {fileID: 2800000, guid: 4803b9d351c130b4d855b89ceac119a9, type: 3}
+  - {fileID: 2800000, guid: 98205bc4bbe96224198be9e272cee5bb, type: 3}
+  - {fileID: 2800000, guid: cebb6e55d74883945b601090e8072922, type: 3}
+  - {fileID: 2800000, guid: 0765d675c3b385744bbd568f43572e52, type: 3}
+  - {fileID: 2800000, guid: 7ab674cf6122e524289fedd7dfbefbd4, type: 3}
+  - {fileID: 2800000, guid: 8ccd68d95d6262e4da09761c65866877, type: 3}
+  - {fileID: 2800000, guid: 9d0a5de41226af947925364a3de7157e, type: 3}
+  - {fileID: 2800000, guid: c7bdb9edcb121554c8d4b4859f041c5b, type: 3}
+  - {fileID: 2800000, guid: ffc4dfe8a487f4c4a93b380d086a0716, type: 3}
+  - {fileID: 2800000, guid: 1e4eb7fc4b2be8440aa5af99f63a3e65, type: 3}
+  - {fileID: 2800000, guid: bd5b40a86d03e3246a750f437584d9db, type: 3}
+  - {fileID: 2800000, guid: 71bad6486db6cc7449c49f66f7fdd10b, type: 3}
+  - {fileID: 2800000, guid: 5c6f6364a18cd5040a7f843f4eaf17b9, type: 3}
+  - {fileID: 2800000, guid: 68c20b0dca757864b8f17787dd71161a, type: 3}
+  - {fileID: 2800000, guid: 8e8977dd8e29a0a4d9e973ee56eed96a, type: 3}
+  - {fileID: 2800000, guid: 99ce9abedc010d548ac5c5de9402beaa, type: 3}
+  - {fileID: 2800000, guid: 6540d31a9577e7740bbd3c1f85e98e17, type: 3}
+  - {fileID: 2800000, guid: 045f8a0612e9e634b9bebf447b9af213, type: 3}
+  - {fileID: 2800000, guid: cde9cb0c4a8cc7c4fb23debb1c6c3d1c, type: 3}
+  - {fileID: 2800000, guid: a39f940a9a25f8e4ba800b2a9a33553e, type: 3}
+  - {fileID: 2800000, guid: e834d94a726a1544289ab3a6bd76f065, type: 3}
+  - {fileID: 2800000, guid: 60004bc8e934d064ca58a53d86ae9c6a, type: 3}
+  - {fileID: 2800000, guid: c66c1ee59fbe07a489567bbc0fe6ca84, type: 3}
+  - {fileID: 2800000, guid: 4b292ed3be6030a46b692cd4a6618fce, type: 3}
+  - {fileID: 2800000, guid: e5a866cc090f56e4ba639cea6678767a, type: 3}
+  - {fileID: 2800000, guid: a6de4c4d850aff74ea58994f8d761c2d, type: 3}
+--- !u!114 &-3994309880104181427
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2289ef181fab4c4c924f185b43c6a20, type: 3}
+  m_Name: Posterize
+  m_EditorClassIdentifier: VolFx::VolFx.PosterizePass
+  _active: 1
+  _shader: {fileID: 4800000, guid: 7197a098de6065f4ab8a580c8f8c7226, type: 3}
+--- !u!114 &-3174172040659988998
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb8271c6634d194ca074e3c52a639ee, type: 3}
+  m_Name: Invert
+  m_EditorClassIdentifier: VolFx::VolFx.InvertPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: a8a8d9d8743c6f64b89ba15b99d6ba9c, type: 3}
+--- !u!114 &-2640741139269264128
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447ed90198624d459ee11f60dbf86ffc, type: 3}
+  m_Name: Bloom
+  m_EditorClassIdentifier: VolFx::VolFx.BloomPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: a181405f9bf44aef9074ccf0a6292106, type: 3}
+  _mode: 1
+  _samples: 7
+  _scatterMax:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _scatterMin:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: -1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _flicker:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.77
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 4
+  _flickerPeriod: 7
+  _hdr: 1
+  _bloomOnly: 0
+--- !u!114 &-2373526898718958847
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c8d156cebe46b383a5291e7e5d4ba2, type: 3}
+  m_Name: Color Map
+  m_EditorClassIdentifier: VolFx::VolFx.ColorMapPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: 5c8038ea0b6f4d94abca9e7bf5c15beb, type: 3}
+--- !u!114 &-870881837438305893
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -450,7 +684,64 @@ MonoBehaviour:
   _sharpDefault: 0
   _modeDefault: 0
   _remapDefault: 0
---- !u!114 &-2754502447738159703
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11145981673336645838492a2d98e247, type: 3}
+  m_Name: Renderer2D
+  m_EditorClassIdentifier: 
+  debugShaders:
+    debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
+    hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
+    probeVolumeSamplingDebugComputeShader: {fileID: 7200000, guid: 53626a513ea68ce47b59dc1299fe3959, type: 3}
+  probeVolumeResources:
+    probeVolumeDebugShader: {fileID: 4800000, guid: e5c6678ed2aaa91408dd3df699057aae, type: 3}
+    probeVolumeFragmentationDebugShader: {fileID: 4800000, guid: 03cfc4915c15d504a9ed85ecc404e607, type: 3}
+    probeVolumeOffsetDebugShader: {fileID: 4800000, guid: 53a11f4ebaebf4049b3638ef78dc9664, type: 3}
+    probeVolumeSamplingDebugShader: {fileID: 4800000, guid: 8f96cd657dc40064aa21efcc7e50a2e7, type: 3}
+    probeSamplingDebugMesh: {fileID: -3555484719484374845, guid: 57d7c4c16e2765b47a4d2069b311bffe, type: 3}
+    probeSamplingDebugTexture: {fileID: 2800000, guid: 24ec0e140fb444a44ab96ee80844e18e, type: 3}
+    probeVolumeBlendStatesCS: {fileID: 0}
+  m_RendererFeatures:
+  - {fileID: 6828674889178184557}
+  m_RendererFeatureMap: 6d7b18c0a153c45e
+  m_UseNativeRenderPass: 0
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_TransparencySortMode: 0
+  m_TransparencySortAxis: {x: 0, y: 1, z: 0}
+  m_HDREmulationScale: 1
+  m_LightRenderTextureScale: 0.5
+  m_LightBlendStyles:
+  - name: Multiply
+    maskTextureChannel: 0
+    blendMode: 1
+  - name: Additive
+    maskTextureChannel: 0
+    blendMode: 0
+  - name: Multiply with Mask
+    maskTextureChannel: 1
+    blendMode: 1
+  - name: Additive with Mask
+    maskTextureChannel: 1
+    blendMode: 0
+  m_UseDepthStencilBuffer: 1
+  m_UseCameraSortingLayersTexture: 0
+  m_CameraSortingLayersTextureBound: -1
+  m_CameraSortingLayerDownsamplingMethod: 0
+  m_MaxLightRenderTextureCount: 16
+  m_MaxShadowRenderTextureCount: 1
+  m_PostProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
+  m_DefaultMaterialType: 0
+  m_DefaultCustomMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+--- !u!114 &314107513176347152
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -459,27 +750,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d8f4db9a2fd4f108b1374528137ff26, type: 3}
-  m_Name: Distort
-  m_EditorClassIdentifier: VolFx::VolFx.DistortPass
+  m_Script: {fileID: 11500000, guid: d98d6139e81eeae4ca43472e7467e46e, type: 3}
+  m_Name: Ascii
+  m_EditorClassIdentifier: VolFx::VolFx.AsciiPass
   _active: 1
-  _shader: {fileID: 4800000, guid: 9c32f8d52c844eaab1fc42000e1eef87, type: 3}
-  _motionMul: 1
---- !u!114 &-2343273321335135856
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efb8271c6634d194ca074e3c52a639ee, type: 3}
-  m_Name: Invert
-  m_EditorClassIdentifier: VolFx::VolFx.InvertPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: a8a8d9d8743c6f64b89ba15b99d6ba9c, type: 3}
---- !u!114 &-2144717841942289061
+  _shader: {fileID: 4800000, guid: e3111a8d989e6a547a827386135ea0f8, type: 3}
+  _noiseScale: 0.5
+  _absolute: 1
+  _gradient: {fileID: 2800000, guid: 0a795d9de0702d840bb9093bf015c355, type: 3}
+  _palette:
+    enabled: 0
+    value: {fileID: 2800000, guid: 375120ba5ec0f1d4eaa7f761d1a3d758, type: 3}
+  _depth: 1
+  _scale: 1
+  _scaleLerp:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.0369
+      outSlope: 0.0369
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.8459
+    - serializedVersion: 3
+      time: 1
+      value: 0.5
+      inSlope: 56.8515
+      outSlope: 56.8515
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.0104
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _frameRate: 0
+  _ascii: {r: 1, g: 1, b: 1, a: 1}
+  _image: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &783944562709144745
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -501,7 +812,343 @@ MonoBehaviour:
   _pixelate: 1
   _scale: 0.735
   _frameRate: 0
---- !u!114 &-2005639450010405312
+--- !u!114 &790954457642183945
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d93f1809b0d8d949803e8bb60f44915, type: 3}
+  m_Name: Comics
+  m_EditorClassIdentifier: VolFx::VolFx.ComicsPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: f97628ee99a0e10418407fba82d232cb, type: 3}
+  _ditherTex: {fileID: 2800000, guid: e470306b2a0935842a3dc6bdc1f3e813, type: 3}
+--- !u!114 &1097418680864595819
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93409a5890767394aa33c11ec4b99d45, type: 3}
+  m_Name: Dissolve
+  m_EditorClassIdentifier: VolFx::VolFx.DissolvePass
+  _active: 1
+  _shader: {fileID: 4800000, guid: 1edd8b288cb771f4cb0120d6171c9689, type: 3}
+  _tweenMove:
+    enabled: 1
+    value:
+      Range: {x: 0, y: 7}
+      Value: 1
+  _tweenLerp:
+    enabled: 1
+    value:
+      Range: {x: 0, y: 7}
+      Value: 0.3
+  _scaleDefault: 0
+  _velocityDefault: {x: 0, y: 0, z: 0}
+  _textureDefault: {fileID: 2800000, guid: 9d5d64ece5c9f1e4e8a7a7c731f76c51, type: 3}
+  _shadeDefault: 0
+--- !u!114 &1111749881366800417
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74a3c1ae8c044449049a98373e05c46, type: 3}
+  m_Name: Blur
+  m_EditorClassIdentifier: VolFx::VolFx.BlurPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: b653195d866dd764b888bc5edc759074, type: 3}
+  _response:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.03
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _filter:
+  - 0.007228916
+  - 0.043749984
+  - 0.12409639
+  - 0.20444278
+  - 0.24096388
+  - 0.20444278
+  - 0.12409639
+  - 0.043749984
+  - 0.007228916
+--- !u!114 &1287884606680318891
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a16e723449431ba1367f4805bf053e, type: 3}
+  m_Name: Chromatic
+  m_EditorClassIdentifier: VolFx::VolFx.ChromaticPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: 2bc242da8bd3afc46b9a21ba0353488a, type: 3}
+--- !u!114 &1426342324537576914
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4a3c9fc53e47eeb28b368324d7020f, type: 3}
+  m_Name: Flow
+  m_EditorClassIdentifier: VolFx::VolFx.FlowPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: 3fc4e2bbb04b44788d407966b1b80a45, type: 3}
+  _fps: 60
+  _scale: 0.5
+  _hdr: 0
+--- !u!114 &2923457744156307777
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7479e16a933e7f946b0d6fbbdd506f6c, type: 3}
+  m_Name: Warp
+  m_EditorClassIdentifier: VolFx::VolFx.WarpPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: c8ad0a2f4d91daa428cc0448e8687944, type: 3}
+  _maskPower: 2
+--- !u!114 &3738232964405692659
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b100ac26964d4caf6d0e26acf977bc, type: 3}
+  m_Name: Scanlines
+  m_EditorClassIdentifier: VolFx::VolFx.ScanlinesPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: 80f8a891f2f2ddb43b3992b8bfe31d7f, type: 3}
+  _move:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  _movePeriod: 5
+  _flickerCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.1597
+      outSlope: 1.1597
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.2274
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.5078
+      outSlope: 1.5078
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.2807
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 0
+    m_RotationOrder: 4
+  _flickerPeriod: 1.2
+  _gradRange: {x: 0.07, y: 3}
+  _flickerMove: {x: 0.2, y: 3}
+  _flipCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _flipRelease: 0.1
+  _forceCount:
+    enabled: 0
+    value: 570
+--- !u!114 &3988944308425059911
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc333b15d5e54546b9236a93044a3ee, type: 3}
+  m_Name: Jpeg
+  m_EditorClassIdentifier: VolFx::VolFx.JpegPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: c87cb70bbf7424448b290759a6e27a96, type: 3}
+--- !u!114 &4629185871832487930
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125142d956014102a2983be8a46260c7, type: 3}
+  m_Name: Sharpen
+  m_EditorClassIdentifier: VolFx::VolFx.SharpenPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: a1512fee65ae9fe4f819adaab1f68f74, type: 3}
+  _lerp:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _range: {x: 0, y: 3}
+--- !u!114 &4988700131154825938
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1737bdb761e3c494f826011a13e58c3e, type: 3}
+  m_Name: Watercolor
+  m_EditorClassIdentifier: VolFx::VolFx.WatercolorPass
+  _active: 1
+  _shader: {fileID: 4800000, guid: cb240605c4093194c9340fe96d17540b, type: 3}
+  _motionTexDefault: {fileID: 2800000, guid: bf06598f39681704b891ca7f0867165e, type: 3}
+  _paperTexDefault: {fileID: 2800000, guid: 6a6445e18fc14a745b447bad8eea5220, type: 3}
+--- !u!114 &5842871166450860826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c53165b379c3d94ca34b12cb8eb10f1, type: 3}
+  m_Name: VolFx
+  m_EditorClassIdentifier: VolFx::VolFx.VolFx
+  m_Active: 1
+  _event: 550
+  _format:
+    enabled: 1
+    value: 0
+  _mask:
+    enabled: 0
+    value:
+      serializedVersion: 2
+      m_Bits: 0
+  _source:
+    _source: 0
+    _globalTex: _inputTex
+    _renderTex: {fileID: 0}
+    _pool: {fileID: 0}
+  _output:
+    _output: 0
+    _renderTex: {fileID: 0}
+    _outputTex: _VolFxTex
+    _sortingOrder: 0
+    _camDistance: 100
+  _passes:
+    m_List: []
+  _blitShader: {fileID: 4800000, guid: a8a709d9db2241741ab3032b946ef258, type: 3}
+--- !u!114 &5891984048420604478
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -926,7 +1573,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: bc0d91bf1c4d89d4c8796682be429e14, type: 3}
   - {fileID: 2800000, guid: 0ace482272b64fc40837a5ee28939c86, type: 3}
   - {fileID: 2800000, guid: 52c8c6fc158b1ff4ba8c5e434e700e1b, type: 3}
---- !u!114 &-1933563844012537093
+--- !u!114 &6371372670850041128
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -935,428 +1582,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e74a3c1ae8c044449049a98373e05c46, type: 3}
-  m_Name: Blur
-  m_EditorClassIdentifier: VolFx::VolFx.BlurPass
+  m_Script: {fileID: 11500000, guid: 14ba4625d5562404f9f843158bcce61c, type: 3}
+  m_Name: Pixelation
+  m_EditorClassIdentifier: VolFx::VolFx.PixelationPass
   _active: 1
-  _shader: {fileID: 4800000, guid: b653195d866dd764b888bc5edc759074, type: 3}
-  _response:
+  _shader: {fileID: 4800000, guid: b6e6d026c1bad65479771f106c52fc5b, type: 3}
+  _scaleLerp:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0.03
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _filter:
-  - 0.007228916
-  - 0.043749984
-  - 0.12409639
-  - 0.20444278
-  - 0.24096388
-  - 0.20444278
-  - 0.12409639
-  - 0.043749984
-  - 0.007228916
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11145981673336645838492a2d98e247, type: 3}
-  m_Name: Renderer2D
-  m_EditorClassIdentifier: 
-  debugShaders:
-    debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
-    hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
-    probeVolumeSamplingDebugComputeShader: {fileID: 7200000, guid: 53626a513ea68ce47b59dc1299fe3959, type: 3}
-  probeVolumeResources:
-    probeVolumeDebugShader: {fileID: 4800000, guid: e5c6678ed2aaa91408dd3df699057aae, type: 3}
-    probeVolumeFragmentationDebugShader: {fileID: 4800000, guid: 03cfc4915c15d504a9ed85ecc404e607, type: 3}
-    probeVolumeOffsetDebugShader: {fileID: 4800000, guid: 53a11f4ebaebf4049b3638ef78dc9664, type: 3}
-    probeVolumeSamplingDebugShader: {fileID: 4800000, guid: 8f96cd657dc40064aa21efcc7e50a2e7, type: 3}
-    probeSamplingDebugMesh: {fileID: -3555484719484374845, guid: 57d7c4c16e2765b47a4d2069b311bffe, type: 3}
-    probeSamplingDebugTexture: {fileID: 2800000, guid: 24ec0e140fb444a44ab96ee80844e18e, type: 3}
-    probeVolumeBlendStatesCS: {fileID: 0}
-  m_RendererFeatures:
-  - {fileID: 5842871166450860826}
-  m_RendererFeatureMap: 1a03ad785e0c1651
-  m_UseNativeRenderPass: 0
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_TransparencySortMode: 0
-  m_TransparencySortAxis: {x: 0, y: 1, z: 0}
-  m_HDREmulationScale: 1
-  m_LightRenderTextureScale: 0.5
-  m_LightBlendStyles:
-  - name: Multiply
-    maskTextureChannel: 0
-    blendMode: 1
-  - name: Additive
-    maskTextureChannel: 0
-    blendMode: 0
-  - name: Multiply with Mask
-    maskTextureChannel: 1
-    blendMode: 1
-  - name: Additive with Mask
-    maskTextureChannel: 1
-    blendMode: 0
-  m_UseDepthStencilBuffer: 1
-  m_UseCameraSortingLayersTexture: 0
-  m_CameraSortingLayersTextureBound: -1
-  m_CameraSortingLayerDownsamplingMethod: 0
-  m_MaxLightRenderTextureCount: 16
-  m_MaxShadowRenderTextureCount: 1
-  m_PostProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
-  m_DefaultMaterialType: 0
-  m_DefaultCustomMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
---- !u!114 &1132014953781632514
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d93f1809b0d8d949803e8bb60f44915, type: 3}
-  m_Name: Comics
-  m_EditorClassIdentifier: VolFx::VolFx.ComicsPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: f97628ee99a0e10418407fba82d232cb, type: 3}
-  _ditherTex: {fileID: 2800000, guid: e470306b2a0935842a3dc6bdc1f3e813, type: 3}
---- !u!114 &1545052701043461228
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93409a5890767394aa33c11ec4b99d45, type: 3}
-  m_Name: Dissolve
-  m_EditorClassIdentifier: VolFx::VolFx.DissolvePass
-  _active: 1
-  _shader: {fileID: 4800000, guid: 1edd8b288cb771f4cb0120d6171c9689, type: 3}
-  _tweenMove:
-    enabled: 1
-    value:
-      Range: {x: 0, y: 7}
-      Value: 1
-  _tweenLerp:
-    enabled: 1
-    value:
-      Range: {x: 0, y: 7}
-      Value: 0.3
-  _scaleDefault: 0
-  _velocityDefault: {x: 0, y: 0, z: 0}
-  _textureDefault: {fileID: 2800000, guid: 9d5d64ece5c9f1e4e8a7a7c731f76c51, type: 3}
-  _shadeDefault: 0
---- !u!114 &2444040365443115279
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21a16e723449431ba1367f4805bf053e, type: 3}
-  m_Name: Chromatic
-  m_EditorClassIdentifier: VolFx::VolFx.ChromaticPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: 2bc242da8bd3afc46b9a21ba0353488a, type: 3}
---- !u!114 &4252141369957760723
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae100a1d916453841bc76a898164e07d, type: 3}
-  m_Name: Glitch
-  m_EditorClassIdentifier: VolFx::VolFx.GlitchPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: 6e12feb5d935b5d4592800a7747a4083, type: 3}
-  _crushPix: 720
-  _clipSpeed: 15
-  _chaoticPeriod:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.4698
-      inSlope: 0
-      outSlope: 0
+      value: 0.0049
+      inSlope: 0.0508
+      outSlope: 0.0508
       tangentMode: 0
       weightedMode: 3
       inWeight: 0
-      outWeight: 0.3333
+      outWeight: 0.742
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
+      value: 0.5095
+      inSlope: 3.6093
+      outSlope: 3.6093
       tangentMode: 0
       weightedMode: 3
-      inWeight: 0.3333
+      inWeight: 0.1646
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _chaoticImpact:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.3333
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.3333
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _periodMax:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.3333
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 1
-      outWeight: 1
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _periodMin:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: -0.0542
-      outSlope: -0.0542
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.3333
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _lockMax:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.0481
-      inSlope: 0.9518
-      outSlope: 0.9518
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.3333
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.9518
-      outSlope: 0.9518
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.3333
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _noiseScale:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.018
-      inSlope: 0.9819
-      outSlope: 0.9819
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.3333
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.9819
-      outSlope: 0.9819
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.3333
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _crushLerp:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -5.7671
-      outSlope: -5.7671
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.1525
-    - serializedVersion: 3
-      time: 1
-      value: 0.1397
-      inSlope: -0.254803
-      outSlope: -0.2548
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.4444
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _gridScale:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.0241
-      inSlope: 0.1746
-      outSlope: 0.17
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.33
-    - serializedVersion: 3
-      time: 1
-      value: 0.1987
-      inSlope: 0.1746
-      outSlope: 0.1746
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.33
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _crushCorrection: {x: 4, y: 2}
-  _lockCorrection: {x: 2, y: 1}
-  _clipTex:
-  - {fileID: 2800000, guid: 5b7315d0fadccd44cbeebc5f6d66f558, type: 3}
-  - {fileID: 2800000, guid: 95bb028ae4d2faa4d9d2cbcb96de72b5, type: 3}
-  - {fileID: 2800000, guid: 6249b0e373a79874fb97a964814bd824, type: 3}
-  - {fileID: 2800000, guid: 677c02f0e9a625842b9d45c86301d68a, type: 3}
-  - {fileID: 2800000, guid: a4d802a08298f2b42a9482a922ea98a6, type: 3}
-  - {fileID: 2800000, guid: fdccebeaea0ccc34b97b97ee8360967c, type: 3}
-  - {fileID: 2800000, guid: 887ade08f7fc51f4fb94386d3e3b1a5b, type: 3}
-  - {fileID: 2800000, guid: be227f8364ee9284fb015f7c8f4c9203, type: 3}
-  - {fileID: 2800000, guid: 2962676d3761b924488d272ec973b367, type: 3}
-  - {fileID: 2800000, guid: c9de242e0ae6dd4468609eea58df9638, type: 3}
-  - {fileID: 2800000, guid: 6085d1a394efe0a4f9a7e7fc9398bac5, type: 3}
-  - {fileID: 2800000, guid: 4803b9d351c130b4d855b89ceac119a9, type: 3}
-  - {fileID: 2800000, guid: 98205bc4bbe96224198be9e272cee5bb, type: 3}
-  - {fileID: 2800000, guid: cebb6e55d74883945b601090e8072922, type: 3}
-  - {fileID: 2800000, guid: 0765d675c3b385744bbd568f43572e52, type: 3}
-  - {fileID: 2800000, guid: 7ab674cf6122e524289fedd7dfbefbd4, type: 3}
-  - {fileID: 2800000, guid: 8ccd68d95d6262e4da09761c65866877, type: 3}
-  - {fileID: 2800000, guid: 9d0a5de41226af947925364a3de7157e, type: 3}
-  - {fileID: 2800000, guid: c7bdb9edcb121554c8d4b4859f041c5b, type: 3}
-  - {fileID: 2800000, guid: ffc4dfe8a487f4c4a93b380d086a0716, type: 3}
-  - {fileID: 2800000, guid: 1e4eb7fc4b2be8440aa5af99f63a3e65, type: 3}
-  - {fileID: 2800000, guid: bd5b40a86d03e3246a750f437584d9db, type: 3}
-  - {fileID: 2800000, guid: 71bad6486db6cc7449c49f66f7fdd10b, type: 3}
-  - {fileID: 2800000, guid: 5c6f6364a18cd5040a7f843f4eaf17b9, type: 3}
-  - {fileID: 2800000, guid: 68c20b0dca757864b8f17787dd71161a, type: 3}
-  - {fileID: 2800000, guid: 8e8977dd8e29a0a4d9e973ee56eed96a, type: 3}
-  - {fileID: 2800000, guid: 99ce9abedc010d548ac5c5de9402beaa, type: 3}
-  - {fileID: 2800000, guid: 6540d31a9577e7740bbd3c1f85e98e17, type: 3}
-  - {fileID: 2800000, guid: 045f8a0612e9e634b9bebf447b9af213, type: 3}
-  - {fileID: 2800000, guid: cde9cb0c4a8cc7c4fb23debb1c6c3d1c, type: 3}
-  - {fileID: 2800000, guid: a39f940a9a25f8e4ba800b2a9a33553e, type: 3}
-  - {fileID: 2800000, guid: e834d94a726a1544289ab3a6bd76f065, type: 3}
-  - {fileID: 2800000, guid: 60004bc8e934d064ca58a53d86ae9c6a, type: 3}
-  - {fileID: 2800000, guid: c66c1ee59fbe07a489567bbc0fe6ca84, type: 3}
-  - {fileID: 2800000, guid: 4b292ed3be6030a46b692cd4a6618fce, type: 3}
-  - {fileID: 2800000, guid: e5a866cc090f56e4ba639cea6678767a, type: 3}
-  - {fileID: 2800000, guid: a6de4c4d850aff74ea58994f8d761c2d, type: 3}
---- !u!114 &5401660988229447287
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41cd2a60ad2e44a2926a745d3badfdef, type: 3}
-  m_Name: Slice
-  m_EditorClassIdentifier: VolFx::VolFx.SlicePass
-  _active: 1
-  _shader: {fileID: 4800000, guid: eecc13e7dfb840cca948414bfb3cbc79, type: 3}
---- !u!114 &5419200603597630344
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7479e16a933e7f946b0d6fbbdd506f6c, type: 3}
-  m_Name: Warp
-  m_EditorClassIdentifier: VolFx::VolFx.WarpPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: c8ad0a2f4d91daa428cc0448e8687944, type: 3}
-  _maskPower: 2
---- !u!114 &5842871166450860826
+  _gridReveal: 0.25
+  _gridDiscrete: 0
+  _absolute: 1
+  _roundnessDefault: 1
+  _crispDefault: 0
+  _palette:
+    enabled: 0
+    value: {fileID: 0}
+--- !u!114 &6828674889178184557
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1391,35 +1654,35 @@ MonoBehaviour:
     _camDistance: 100
   _passes:
     m_List:
-    - {fileID: -9204289595374251147}
-    - {fileID: 6470718249475083203}
-    - {fileID: 6727701046052572480}
-    - {fileID: -1933563844012537093}
-    - {fileID: 2444040365443115279}
-    - {fileID: -6812093304073725677}
-    - {fileID: 1132014953781632514}
-    - {fileID: 1545052701043461228}
-    - {fileID: -2754502447738159703}
-    - {fileID: -2144717841942289061}
-    - {fileID: -6393711826040793488}
-    - {fileID: 4252141369957760723}
-    - {fileID: 6738768924403099741}
-    - {fileID: -6010360457797892638}
-    - {fileID: -2343273321335135856}
-    - {fileID: -8899461251932688489}
-    - {fileID: -7652981207727374343}
-    - {fileID: -2990307906988837729}
-    - {fileID: -4150198055955317567}
-    - {fileID: 8181577606141118936}
-    - {fileID: -8650388069301080584}
-    - {fileID: 9045542171418967362}
-    - {fileID: 5401660988229447287}
-    - {fileID: -2005639450010405312}
-    - {fileID: 5419200603597630344}
-    - {fileID: 6109014843478377378}
-    - {fileID: -8146083689371876240}
+    - {fileID: -8470507415226888812}
+    - {fileID: 314107513176347152}
+    - {fileID: -2640741139269264128}
+    - {fileID: 1111749881366800417}
+    - {fileID: 1287884606680318891}
+    - {fileID: -2373526898718958847}
+    - {fileID: 790954457642183945}
+    - {fileID: 1097418680864595819}
+    - {fileID: -6573590740288132413}
+    - {fileID: 783944562709144745}
+    - {fileID: 1426342324537576914}
+    - {fileID: -5619302062235946367}
+    - {fileID: -8464025988925750807}
+    - {fileID: -5861421916213478347}
+    - {fileID: -3174172040659988998}
+    - {fileID: 3988944308425059911}
+    - {fileID: -9175297960856283141}
+    - {fileID: -870881837438305893}
+    - {fileID: 6371372670850041128}
+    - {fileID: -3994309880104181427}
+    - {fileID: 3738232964405692659}
+    - {fileID: 4629185871832487930}
+    - {fileID: -6894982343910717153}
+    - {fileID: 5891984048420604478}
+    - {fileID: 2923457744156307777}
+    - {fileID: 4988700131154825938}
+    - {fileID: 7503141500857370551}
   _blitShader: {fileID: 4800000, guid: a8a709d9db2241741ab3032b946ef258, type: 3}
---- !u!114 &6109014843478377378
+--- !u!114 &7503141500857370551
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1428,241 +1691,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1737bdb761e3c494f826011a13e58c3e, type: 3}
-  m_Name: Watercolor
-  m_EditorClassIdentifier: VolFx::VolFx.WatercolorPass
+  m_Script: {fileID: 11500000, guid: d855550e46694270a49d1d1d670f411c, type: 3}
+  m_Name: Mask
+  m_EditorClassIdentifier: VolFx::VolFx.MaskPass
   _active: 1
-  _shader: {fileID: 4800000, guid: cb240605c4093194c9340fe96d17540b, type: 3}
-  _motionTexDefault: {fileID: 2800000, guid: bf06598f39681704b891ca7f0867165e, type: 3}
-  _paperTexDefault: {fileID: 2800000, guid: 6a6445e18fc14a745b447bad8eea5220, type: 3}
---- !u!114 &6470718249475083203
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d98d6139e81eeae4ca43472e7467e46e, type: 3}
-  m_Name: Ascii
-  m_EditorClassIdentifier: VolFx::VolFx.AsciiPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: e3111a8d989e6a547a827386135ea0f8, type: 3}
-  _noiseScale: 0.5
-  _absolute: 1
-  _gradient: {fileID: 2800000, guid: 0a795d9de0702d840bb9093bf015c355, type: 3}
-  _palette:
-    enabled: 0
-    value: {fileID: 2800000, guid: 375120ba5ec0f1d4eaa7f761d1a3d758, type: 3}
-  _depth: 1
-  _scale: 1
-  _scaleLerp:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.0369
-      outSlope: 0.0369
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0
-      outWeight: 0.8459
-    - serializedVersion: 3
-      time: 1
-      value: 0.5
-      inSlope: 56.8515
-      outSlope: 56.8515
-      tangentMode: 0
-      weightedMode: 3
-      inWeight: 0.0104
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _frameRate: 0
-  _ascii: {r: 1, g: 1, b: 1, a: 1}
-  _image: {r: 0, g: 0, b: 0, a: 1}
---- !u!114 &6727701046052572480
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 447ed90198624d459ee11f60dbf86ffc, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: VolFx::VolFx.BloomPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: a181405f9bf44aef9074ccf0a6292106, type: 3}
-  _mode: 1
-  _samples: 7
-  _scatterMax:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _scatterMin:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: -1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _flicker:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.5
-      value: 0.77
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 1
-    m_RotationOrder: 4
-  _flickerPeriod: 7
-  _hdr: 1
-  _bloomOnly: 0
---- !u!114 &6738768924403099741
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf1dc9f250f44cdac2b649e3c7e3889, type: 3}
-  m_Name: Grain
-  m_EditorClassIdentifier: VolFx::VolFx.GrainPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: 818caa6126f9d414eb0665f96ee8a7dc, type: 3}
-  _grain: 2
-  _grainTex:
-  - {fileID: 2800000, guid: 7541986b93a62994e94815edfe712921, type: 3}
-  - {fileID: 2800000, guid: a15fa6e666dfd2b42a2601f9ba4305b9, type: 3}
-  - {fileID: 2800000, guid: 73ad0d32b5522d54ab220ac4d69cf9cf, type: 3}
-  - {fileID: 2800000, guid: c3085ad123782bd419925400d3ed7936, type: 3}
-  - {fileID: 2800000, guid: 071beb00a0a037a4da0b0316246c08bb, type: 3}
-  - {fileID: 2800000, guid: 9e571517d66178d4fb7d25b64101fceb, type: 3}
-  - {fileID: 2800000, guid: 4a38babe1216af748a4d03100ca86b29, type: 3}
-  - {fileID: 2800000, guid: 2d47b2e1e54f9ed40ad6ea7d2f8bade0, type: 3}
-  - {fileID: 2800000, guid: 9485bc6a96023904c81c6d360043df74, type: 3}
-  - {fileID: 2800000, guid: d7af5dd6cba23e744a255c071297ae5c, type: 3}
-  - {fileID: 2800000, guid: 2cb163f37e9b5b24ea6a80fb26d1dcb0, type: 3}
-  - {fileID: 2800000, guid: 8a0824da1995cd648bcdb663180f186d, type: 3}
-  _grainClamp: 0.5
---- !u!114 &8181577606141118936
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2289ef181fab4c4c924f185b43c6a20, type: 3}
-  m_Name: Posterize
-  m_EditorClassIdentifier: VolFx::VolFx.PosterizePass
-  _active: 1
-  _shader: {fileID: 4800000, guid: 7197a098de6065f4ab8a580c8f8c7226, type: 3}
---- !u!114 &9045542171418967362
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 125142d956014102a2983be8a46260c7, type: 3}
-  m_Name: Sharpen
-  m_EditorClassIdentifier: VolFx::VolFx.SharpenPass
-  _active: 1
-  _shader: {fileID: 4800000, guid: a1512fee65ae9fe4f819adaab1f68f74, type: 3}
-  _lerp:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _range: {x: 0, y: 3}
+  _shader: {fileID: 4800000, guid: 428ef3a835824a688c5b1034981fecf9, type: 3}
+  _mode: 0
+  _useVolumeSettings: 1
+  _persistent: 0
+  _weight: 1
+  _mask: {fileID: 0}
+  _showInInspector: 0

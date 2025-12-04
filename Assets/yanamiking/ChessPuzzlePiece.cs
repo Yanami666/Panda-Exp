@@ -49,6 +49,8 @@ public class ChessPuzzlePiece : MonoBehaviour
 
             if (slot != null && !slot.isOccupied && slot.requiredPieceID == pieceID)
             {
+                // ✅ 放在正确格子：自动对齐 + 锁死，不能再拖
+                // Correct slot: snap + lock
                 transform.position = slot.transform.position;
                 isPlaced = true;
                 slot.isOccupied = true;
@@ -61,7 +63,9 @@ public class ChessPuzzlePiece : MonoBehaviour
             }
         }
 
-        // 放错位置回到起点 / wrong place -> back to start
-        transform.position = startPos;
+        // ❌ 放错地方：现在不再回到 startPos，而是停在玩家放下的位置
+        // Wrong place: DO NOT return to start, just stay where player left it.
+        // （如果以后你想做“重置关卡”，startPos 以后还能用）
+        // (startPos is kept for potential "reset" feature later)
     }
 }
