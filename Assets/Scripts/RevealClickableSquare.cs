@@ -9,15 +9,18 @@ public class RevealClickableSquare : MonoBehaviour
     public bool moveSquareToThisObject = true;
 
     [Tooltip("以当前物体为中心的偏移量")]
-    public Vector3 offset = new Vector3(0f, 1f, 0f);
+    public Vector3 offset;
 
     [Header("只触发一次？")]
-    public bool onlyOnce = false;
+    public bool onlyOnce = true;
 
-    private bool hasTriggered = false;
+    private bool hasRevealed = false;
+    private Collider2D myCollider;
 
-    void Start()
+    void Awake()
     {
+
+        myCollider = GetComponent<Collider2D>();
         if (clickableSquare != null)
         {
             clickableSquare.SetActive(false);
@@ -26,23 +29,19 @@ public class RevealClickableSquare : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (hasTriggered && onlyOnce) return;
-        if (clickableSquare == null) return;
+        if (onlyOnce && hasRevealed) return;
+        hasRevealed = true;
 
-        // 显示 square
-        clickableSquare.SetActive(true);
-
-        // 可选：移动到物体附近
-        if (moveSquareToThisObject)
+        if (clickableSquare != null)
         {
-            Vector3 targetPos = transform.position + offset;
-            clickableSquare.transform.position = new Vector3(
-                targetPos.x,
-                targetPos.y,
-                clickableSquare.transform.position.z
-            );
+            clickableSquare.SetActive(true);
+
+            if (moveSquareToThisObject)
+                clickableSquare.transform.position = transform.position + offset;
         }
 
-        hasTriggered = true;
+        // ⭐⭐ 关键：抽屉执行完一次后，不再有 collider，避免和方块互相“抢Raycast”
+        if (onlyOnce && myCollider != null)
+            myCollider.enabled = false;
     }
 }
