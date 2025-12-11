@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MenuPage.unity
+    guid: 5f74bb57fb3b947f2909e128acf7b03a
   - enabled: 1
-    path: Assets/Scenes/clock2.unity
-    guid: 444cac40d9b95664d977b729c2e52ade
+    path: Assets/Scenes/NormalScene.unity
+    guid: 8008876768d8f4703bb188ad169af0f9
   - enabled: 1
-    path: Assets/Scenes/clock1.unity
-    guid: 67e9d54b21b54614098bcd64eda611be
+    path: Assets/Scenes/AbnormalScene.unity
+    guid: a38e45588348345f2a4c144cc6411b08
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
