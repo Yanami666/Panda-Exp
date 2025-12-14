@@ -14,6 +14,10 @@ public class ChessPuzzleManager : MonoBehaviour
     [Header("成功时要显示的物体（UI 图片或 Sprite） / Object to show on success")]
     public GameObject successObject;
 
+    // ✅ 新增：拼图成功后要隐藏的 Puzzle 根物体（Overlay / Root）
+    [Header("成功时要隐藏的 Puzzle 根物体 / Puzzle root to hide on success")]
+    public GameObject puzzleRootToHide;
+
     [Header("拼图完成时触发的事件 / Event when puzzle is complete")]
     public UnityEvent onPuzzleComplete;
 
@@ -49,6 +53,12 @@ public class ChessPuzzleManager : MonoBehaviour
         if (filledCorrectSlots >= totalSlots)
         {
             UnityEngine.Debug.Log("Chess puzzle complete!");
+
+            // ✅ 1) 先隐藏 puzzle（让拼图消失）
+            if (puzzleRootToHide != null)
+                puzzleRootToHide.SetActive(false);
+
+            // ✅ 2) 再显示线索 sprite/UI
             if (successObject != null)
                 successObject.SetActive(true);
 

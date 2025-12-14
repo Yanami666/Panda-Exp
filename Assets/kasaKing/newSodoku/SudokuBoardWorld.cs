@@ -12,29 +12,36 @@ public class SudokuBoardWorld : MonoBehaviour
     public float cellSize = 0.9f;
 
     [Header("解出数独后要显示的纸条对象")]
-    public GameObject noteObject;   // 拖 Note1234 进来
+    public GameObject noteObject;   // 拖 Note 进来（整个 Note 根物体）
+
+    [Header("纸条在棋盘下的本地位置偏移（解出后会应用）")]
+    public Vector3 noteLocalOffset = new Vector3(4.5f, -4.5f, 0f);
+
+    [Header("可选：强制纸条渲染在最上层（不想改 Inspector 就勾这个）")]
+    public bool forceNoteOnTop = true;
+    public int noteSortingOrder = 50;
 
     public SudokuCellWorld[,] cells = new SudokuCellWorld[9, 9];
 
-    // 当前选中的格子
     private SudokuCellWorld currentSelected;
-
-    // 是否已经解出（解出后禁止继续修改）
     private bool isSolved = false;
+
+    // ✅ 防止反复开关 Overlay 时重复生成格子
+    private bool boardGenerated = false;
 
     // ====== 你的数独题目（0 表示空格）======
     private int[,] puzzle = new int[9, 9]
     {
-        {0,0,3, 0,0,0, 2,0,0},
-        {0,6,0, 9,8,0, 0,4,3},
-        {4,9,0, 0,3,1, 0,0,6},
+        {8,5,3, 0,7,0, 2,0,1},
+        {0,6,0, 9,8,0, 5,4,3},
+        {4,9,0, 5,3,1, 7,0,6},
 
-        {9,0,7, 0,0,0, 8,6,0},
-        {0,4,0, 0,9,8, 0,0,0},
-        {0,0,5, 4,0,7, 1,0,9},
+        {9,0,7, 0,1,5, 8,6,0},
+        {1,4,0, 2,9,8, 0,5,7},
+        {3,8,5, 4,0,7, 1,0,9},
 
-        {6,0,0, 0,0,3, 9,0,5},
-        {5,0,8, 1,0,0, 0,7,2},
+        {6,0,4, 0,2,3, 9,1,5},
+        {5,3,8, 1,0,9, 0,7,2},
         {2,0,9, 0,5,6, 0,3,8}
     };
 
@@ -53,10 +60,21 @@ public class SudokuBoardWorld : MonoBehaviour
         {5,3,8, 1,4,9, 6,7,2},
         {2,1,9, 7,5,6, 4,3,8}
     };
-    // =====================================
 
     private void Start()
     {
+        // ✅ 避免重复生成
+        if (boardGenerated) return;
+        boardGenerated = true;
+
+        // ✅ 关键：用“当前相机中心”算 topLeft，保证棋盘出现在相机正中间
+        Camera cam = Camera.main;
+        if (cam != null)
+        {
+            Vector3 camPos = cam.transform.position;
+            topLeft = new Vector2(camPos.x - 4f * cellSize, camPos.y + 4f * cellSize);
+        }
+
         GenerateBoard();
 
         // 纸条一开始要隐藏
@@ -96,13 +114,12 @@ public class SudokuBoardWorld : MonoBehaviour
 
     private void HandleMouseClick()
     {
-        if (isSolved) return; // 解出后不再响应点击
+        if (isSolved) return;
 
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 mouseScreen = Input.mousePosition;
 
-            // depth = 相机到 z=0 的距离（相机在 z=-10 -> depth=10）
             float depth = -Camera.main.transform.position.z;
 
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(
@@ -117,23 +134,20 @@ public class SudokuBoardWorld : MonoBehaviour
             {
                 SudokuCellWorld cell = hit.GetComponent<SudokuCellWorld>();
                 if (cell != null)
-                {
                     SelectCell(cell);
-                }
             }
         }
     }
 
     private void HandleKeyboardInput()
     {
-        if (isSolved) return; // 解出后不再响应输入
+        if (isSolved) return;
 
         if (currentSelected == null) return;
         if (currentSelected.isGiven) return;
 
         bool changed = false;
 
-        // 1-9 输入
         for (int i = 1; i <= 9; i++)
         {
             if (Input.GetKeyDown(i.ToString()))
@@ -144,7 +158,6 @@ public class SudokuBoardWorld : MonoBehaviour
             }
         }
 
-        // 清空：0 / Backspace / Delete
         if (Input.GetKeyDown(KeyCode.Backspace) ||
             Input.GetKeyDown(KeyCode.Delete) ||
             Input.GetKeyDown(KeyCode.Alpha0) ||
@@ -154,25 +167,17 @@ public class SudokuBoardWorld : MonoBehaviour
             changed = true;
         }
 
-        // 如果这次输入有改变，就检查是否解对
         if (changed)
-        {
             CheckSolved();
-        }
     }
 
     private void SelectCell(SudokuCellWorld newCell)
     {
-        // 题目格子不允许被选中（不变色）
         if (newCell.isGiven)
-        {
             return;
-        }
 
         if (currentSelected != null && currentSelected != newCell)
-        {
             currentSelected.SetSelected(false);
-        }
 
         currentSelected = newCell;
         currentSelected.SetSelected(true);
@@ -180,42 +185,65 @@ public class SudokuBoardWorld : MonoBehaviour
 
     private void CheckSolved()
     {
-        if (IsSolved())
+        if (!IsSolved())
+            return;
+
+        isSolved = true;
+
+        if (currentSelected != null)
         {
-            isSolved = true;
+            currentSelected.SetSelected(false);
+            currentSelected = null;
+        }
 
-            // 取消当前选中的高亮
-            if (currentSelected != null)
+        // 隐藏所有格子
+        for (int r = 0; r < 9; r++)
+        {
+            for (int c = 0; c < 9; c++)
             {
-                currentSelected.SetSelected(false);
-                currentSelected = null;
+                if (cells[r, c] != null)
+                    cells[r, c].gameObject.SetActive(false);
             }
+        }
 
-            // 把所有格子隐藏
-            for (int r = 0; r < 9; r++)
-            {
-                for (int c = 0; c < 9; c++)
-                {
-                    if (cells[r, c] != null)
-                    {
-                        cells[r, c].gameObject.SetActive(false);
-                    }
-                }
-            }
+        ShowNoteAtBoard();
 
-            // 显示纸条 1234
-            if (noteObject != null)
-            {
-                noteObject.SetActive(true);
-            }
+        Debug.Log("Sudoku solved! 显示纸条。");
+    }
 
-            Debug.Log("Sudoku solved! 显示 1234 纸条。");
+    private void ShowNoteAtBoard()
+    {
+        if (noteObject == null)
+        {
+            Debug.LogWarning("noteObject 没有绑定！");
+            return;
+        }
+
+        noteObject.SetActive(true);
+
+        // ✅ 让纸条出现在当前相机正中间（世界坐标）
+        Camera cam = Camera.main;
+        if (cam != null)
+        {
+            Vector3 camPos = cam.transform.position;
+
+            // 保持 note 原来的 Z，避免跑到相机后面/前面
+            float z = noteObject.transform.position.z;
+
+            noteObject.transform.position = new Vector3(camPos.x, camPos.y, z);
+        }
+
+        // 可选：强制排序到最上层，避免被挡住
+        if (forceNoteOnTop)
+        {
+            var srs = noteObject.GetComponentsInChildren<SpriteRenderer>(true);
+            foreach (var sr in srs)
+                sr.sortingOrder = noteSortingOrder;
         }
     }
 
     private bool IsSolved()
     {
-        // 只要有一个格子与 solution 不一样，就没解对
         for (int r = 0; r < 9; r++)
         {
             for (int c = 0; c < 9; c++)

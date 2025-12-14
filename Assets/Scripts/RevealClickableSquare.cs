@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class RevealClickableSquare : MonoBehaviour
 {
-    [Header("要显示的那个 Clickable Square（场景里的实例）")]
+    [Header("要显示的 Clickable Square（场景里的实例）")]
     public GameObject clickableSquare;
+
+    [Header("Close Icon（点击关闭）")]
+    public GameObject closeIcon;
 
     [Header("是否把方块移动到当前物体附近")]
     public bool moveSquareToThisObject = true;
@@ -19,17 +22,19 @@ public class RevealClickableSquare : MonoBehaviour
 
     void Awake()
     {
-
         myCollider = GetComponent<Collider2D>();
+
         if (clickableSquare != null)
-        {
             clickableSquare.SetActive(false);
-        }
+
+        if (closeIcon != null)
+            closeIcon.SetActive(false);
     }
 
     void OnMouseDown()
     {
         if (onlyOnce && hasRevealed) return;
+
         hasRevealed = true;
 
         if (clickableSquare != null)
@@ -40,8 +45,23 @@ public class RevealClickableSquare : MonoBehaviour
                 clickableSquare.transform.position = transform.position + offset;
         }
 
-        // ⭐⭐ 关键：抽屉执行完一次后，不再有 collider，避免和方块互相“抢Raycast”
+        if (closeIcon != null)
+            closeIcon.SetActive(true);
+
+        // 防止和 clickableSquare 抢 Raycast
         if (onlyOnce && myCollider != null)
             myCollider.enabled = false;
+    }
+
+    /// <summary>
+    /// 由 CloseIcon 调用
+    /// </summary>
+    public void CloseSquare()
+    {
+        if (clickableSquare != null)
+            clickableSquare.SetActive(false);
+
+        if (closeIcon != null)
+            closeIcon.SetActive(false);
     }
 }

@@ -1,9 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// 挂在时针 / 分针上，允许用鼠标拖动来旋转指针。
-/// 需要在指针上加一个 Collider2D。
-/// </summary>
 [RequireComponent(typeof(Collider2D))]
 public class ClockHandDrag : MonoBehaviour
 {
@@ -44,7 +40,6 @@ public class ClockHandDrag : MonoBehaviour
         float mouseAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         float finalAngle = mouseAngle + angleOffset;
-
         transform.rotation = Quaternion.Euler(0f, 0f, finalAngle);
     }
 

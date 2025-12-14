@@ -2,35 +2,35 @@ using UnityEngine;
 
 public class ClickToClosePuzzle : MonoBehaviour
 {
-    public GameObject puzzleRoot;   // 一般拖 PuzzleOverlay 自己
+    public GameObject puzzleRoot;   // 拖 PuzzleOverlay_数独
 
     private EdgePanCamera2D cameraPan;
+    private float ignoreUntil;
 
     void Awake()
     {
         Camera mainCam = Camera.main;
         if (mainCam != null)
-        {
             cameraPan = mainCam.GetComponent<EdgePanCamera2D>();
-        }
+    }
+
+    void OnEnable()
+    {
+        // 防止“打开的同一次点击”立刻触发关闭
+        ignoreUntil = Time.time + 0.1f;
     }
 
     void OnMouseDown()
     {
-        Debug.Log("Overlay clicked, closing puzzle.");
+        if (Time.time < ignoreUntil)
+            return;
 
         if (puzzleRoot != null)
-        {
             puzzleRoot.SetActive(false);
-        }
 
-        // 🔓 恢复相机移动（如果你之前有）
         if (cameraPan != null)
-        {
             cameraPan.canPan = true;
-        }
 
-        // ✅ 标记：现在没有 puzzle 了，可以再次点击其他 square
         PuzzleManager.puzzleOpen = false;
     }
 }
