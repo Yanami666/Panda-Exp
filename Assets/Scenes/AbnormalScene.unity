@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6454894858643132750, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_Name
-      value: "ClickableSquare_\u65F6\u949FB"
+      value: "ClickableSquare_\u6C99\u76D8B"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1332,11 +1332,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 610714249421297244, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.69105
+      value: -3.68
       objectReference: {fileID: 0}
     - target: {fileID: 610714249421297244, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.56713
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 610714249421297244, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1374,9 +1374,13 @@ PrefabInstance:
       propertyPath: objectToActivate
       value: 
       objectReference: {fileID: 1565974848}
+    - target: {fileID: 3624618098236161234, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7907676683505959669, guid: 8021d89271bd84356a0034bf0388c001, type: 3}
     - target: {fileID: 6454894858643132750, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_Name
-      value: "ClickableSquare_\u65F6\u949F"
+      value: "ClickableSquare_\u65F6\u949FB"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

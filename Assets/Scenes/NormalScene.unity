@@ -1459,11 +1459,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 610714249421297244, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.52
+      value: -3.83
       objectReference: {fileID: 0}
     - target: {fileID: 610714249421297244, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.93
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 610714249421297244, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1501,6 +1501,10 @@ PrefabInstance:
       propertyPath: objectToActivate
       value: 
       objectReference: {fileID: 1246504425}
+    - target: {fileID: 3624618098236161234, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7035577625473636311, guid: 51d914868b48c469882e01fdef7cd284, type: 3}
     - target: {fileID: 6454894858643132750, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_Name
       value: "ClickableSquare_\u65F6\u949F"
