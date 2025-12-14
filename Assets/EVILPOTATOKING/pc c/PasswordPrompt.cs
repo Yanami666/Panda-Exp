@@ -1,22 +1,25 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PasswordPrompt : MonoBehaviour
 {
-    [Header("Root (No Panel Needed)")]
-    public GameObject root; // 直接拖 Canvas_Prompt 或 PromptRoot(空物体)
+    [Header("Root (Canvas or empty root)")]
+    public GameObject root;
 
     [Header("TMP UI")]
     public TMP_InputField inputField;
-    public TextMeshProUGUI hintText; // 可为空
+    public TextMeshProUGUI hintText;
 
     [Header("Text")]
     public string defaultHint = "请输入密码";
     public string wrongHint = "密码错误";
 
-    private string expectedPassword = "";
+    private string expectedPassword;
     private Action onSuccess;
+    private Coroutine focusCoroutine;
 
     public static PasswordPrompt Instance { get; private set; }
 
@@ -27,18 +30,17 @@ public class PasswordPrompt : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Instance = this;
 
+        Instance = this;
         Hide();
     }
 
     public void Open(string password, Action successAction, string hintOverride = null)
     {
-        expectedPassword = password ?? "";
+        expectedPassword = password;
         onSuccess = successAction;
 
-        if (root != null) root.SetActive(true);
-        else gameObject.SetActive(true);
+        Show();
 
         if (hintText != null)
             hintText.text = string.IsNullOrEmpty(hintOverride) ? defaultHint : hintOverride;
@@ -46,46 +48,85 @@ public class PasswordPrompt : MonoBehaviour
         if (inputField != null)
         {
             inputField.text = "";
-            inputField.ActivateInputField();
-            inputField.Select();
+            FocusInputNextFrame();
         }
         else
         {
-            Debug.LogError("PasswordPrompt: 没有绑定 TMP_InputField。请把创建出来的 TMP Input Field 父物体拖进来。");
+            Debug.LogError("PasswordPrompt: TMP_InputField 未绑定");
         }
     }
 
-    // 给“确认 Sprite”调用
     public void Submit()
     {
         if (inputField == null) return;
 
         string typed = inputField.text ?? "";
+
         if (typed == expectedPassword)
         {
-            var cb = onSuccess;
+            Action cb = onSuccess;
             Hide();
             cb?.Invoke();
         }
         else
         {
-            if (hintText != null) hintText.text = wrongHint;
+            if (hintText != null)
+                hintText.text = wrongHint;
 
             inputField.text = "";
-            inputField.ActivateInputField();
-            inputField.Select();
+            FocusInputNextFrame();
         }
     }
 
     public void Hide()
     {
-        expectedPassword = "";
+        expectedPassword = null;
         onSuccess = null;
 
-        if (hintText != null) hintText.text = "";
-        if (inputField != null) inputField.text = "";
+        if (hintText != null)
+            hintText.text = "";
 
-        if (root != null) root.SetActive(false);
-        else gameObject.SetActive(false);
+        if (inputField != null)
+            inputField.text = "";
+
+        if (focusCoroutine != null)
+            StopCoroutine(focusCoroutine);
+
+        focusCoroutine = null;
+
+        if (root != null)
+            root.SetActive(false);
+        else
+            gameObject.SetActive(false);
+    }
+
+    private void Show()
+    {
+        if (root != null)
+            root.SetActive(true);
+        else
+            gameObject.SetActive(true);
+    }
+
+    private void FocusInputNextFrame()
+    {
+        if (focusCoroutine != null)
+            StopCoroutine(focusCoroutine);
+
+        focusCoroutine = StartCoroutine(FocusRoutine());
+    }
+
+    private IEnumerator FocusRoutine()
+    {
+        yield return null;
+
+        if (EventSystem.current != null && inputField != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(inputField.gameObject);
+
+            inputField.ActivateInputField();
+            inputField.Select();
+        }
     }
 }
