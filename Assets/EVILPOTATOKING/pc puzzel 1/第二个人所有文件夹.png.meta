@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: dc8175700590d41d7aee073d20575bfe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 944710586920778710
+    second: axaax_0
+  - first:
+      213: -6706039906367460341
+    second: axaax_1
+  - first:
+      213: -1023638728442145030
+    second: axaax_2
+  - first:
+      213: 7781014717631837569
+    second: axaax_3
+  - first:
+      213: -751331296045249842
+    second: axaax_4
+  - first:
+      213: -2299870814877564958
+    second: axaax_5
+  - first:
+      213: -315499874173590039
+    second: axaax_6
+  - first:
+      213: 1866304869915181027
+    second: axaax_7
+  - first:
+      213: 7229400065369081581
+    second: axaax_8
+  - first:
+      213: 6090329685561218576
+    second: axaax_9
+  - first:
+      213: 8343226383917137729
+    second: axaax_10
+  - first:
+      213: 3459239178543358344
+    second: axaax_11
+  - first:
+      213: 7528232527440508767
+    second: axaax_12
+  - first:
+      213: 6928324917194740942
+    second: axaax_13
+  - first:
+      213: 6272396495856960681
+    second: axaax_14
+  - first:
+      213: 7195265423117553275
+    second: axaax_15
+  - first:
+      213: 1352367965681119813
+    second: axaax_16
+  - first:
+      213: 5670139204284014429
+    second: axaax_17
+  - first:
+      213: -6244582773073773462
+    second: axaax_18
+  - first:
+      213: 3776079745100274483
+    second: axaax_19
+  - first:
+      213: -1864262408609643346
+    second: axaax_20
+  - first:
+      213: -6684648613706729442
+    second: axaax_21
+  - first:
+      213: -2660772407237080063
+    second: axaax_22
+  - first:
+      213: -8439421377699211541
+    second: axaax_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: axaax_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 341
+        width: 128
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dbb6f406494c1d00800000000000000
+      internalID: 944710586920778710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_1
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 341
+        width: 128
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0caf5b3c3c5fe2a0800000000000000
+      internalID: -6706039906367460341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_2
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 341
+        width: 128
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af69fdcfffd4bc1f0800000000000000
+      internalID: -1023638728442145030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_3
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 295
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185388cf8a7bbfb60800000000000000
+      internalID: 7781014717631837569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_4
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 295
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecac69eba2cb295f0800000000000000
+      internalID: -751331296045249842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_5
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 299
+        width: 32
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ef3fe9dda73510e0800000000000000
+      internalID: -2299870814877564958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_6
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 298
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e5e339398e1f9bf0800000000000000
+      internalID: -315499874173590039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_7
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 310
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ef30ed146276e910800000000000000
+      internalID: 1866304869915181027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_8
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 294
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de682837e0df35460800000000000000
+      internalID: 7229400065369081581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_9
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 293
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01694e0c492358450800000000000000
+      internalID: 6090329685561218576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_10
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 296
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f3c0e113819c370800000000000000
+      internalID: 8343226383917137729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_11
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 296
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 881e03e74bfa10030800000000000000
+      internalID: 3459239178543358344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_12
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 89
+        width: 128
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f57f1a0f897a97860800000000000000
+      internalID: 7528232527440508767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_13
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 89
+        width: 128
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec451e9edca562060800000000000000
+      internalID: 6928324917194740942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_14
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 49
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a485f161670c0750800000000000000
+      internalID: 6272396495856960681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_15
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 89
+        width: 128
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e8299b7c7bad360800000000000000
+      internalID: 7195265423117553275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_16
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 24
+        width: 40
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5427a08ef7394c210800000000000000
+      internalID: 1352367965681119813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_17
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 25
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f5d5a809160be40800000000000000
+      internalID: 5670139204284014429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_18
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 23
+        width: 47
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6cf9689d09c659a0800000000000000
+      internalID: -6244582773073773462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_19
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 59
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33bdf3a8584576430800000000000000
+      internalID: 3776079745100274483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_20
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 46
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea445b6773fc026e0800000000000000
+      internalID: -1864262408609643346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_21
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 32
+        width: 46
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18f3bba08b5b33a0800000000000000
+      internalID: -6684648613706729442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_22
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 42
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c097ec799031bd0800000000000000
+      internalID: -2660772407237080063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axaax_23
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 43
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be6966098f621ea80800000000000000
+      internalID: -8439421377699211541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      axaax_0: 944710586920778710
+      axaax_1: -6706039906367460341
+      axaax_10: 8343226383917137729
+      axaax_11: 3459239178543358344
+      axaax_12: 7528232527440508767
+      axaax_13: 6928324917194740942
+      axaax_14: 6272396495856960681
+      axaax_15: 7195265423117553275
+      axaax_16: 1352367965681119813
+      axaax_17: 5670139204284014429
+      axaax_18: -6244582773073773462
+      axaax_19: 3776079745100274483
+      axaax_2: -1023638728442145030
+      axaax_20: -1864262408609643346
+      axaax_21: -6684648613706729442
+      axaax_22: -2660772407237080063
+      axaax_23: -8439421377699211541
+      axaax_3: 7781014717631837569
+      axaax_4: -751331296045249842
+      axaax_5: -2299870814877564958
+      axaax_6: -315499874173590039
+      axaax_7: 1866304869915181027
+      axaax_8: 7229400065369081581
+      axaax_9: 6090329685561218576
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
