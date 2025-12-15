@@ -1,30 +1,37 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GridMover : MonoBehaviour
 {
-    [Header("Grid Size (6x7)")]
-    public int rows = 6;   // Y
-    public int cols = 7;   // X
+    [Header("Grid (6x7)")]
+    public int rows = 6;
+    public int cols = 7;
 
     [Header("Grid Placement")]
-    public Transform origin;     // 格子(0,0)对应的世界坐标（建议放在“左下角格子中心”）
-    public float cellSize = 1f;  // 每个格子的世界间距（中心到中心）
+    [Tooltip("格子(0,0)（左上角格子中心）的世界坐标")]
+    public Transform origin;
+    public float cellSize = 1f;
 
-    [Header("Level Cells")]
+    [Header("Level Cells (0,0 is TOP-LEFT)")]
     public Vector2Int startCell;
     public Vector2Int keyCell;
     public Vector2Int exitCell;
 
-    [Header("Walls / Blocks")]
-    [Tooltip("这些坐标表示：站在该格子上往下走会撞到“下方墙”，触发回到起点")]
-    public List<Vector2Int> downWallCells = new List<Vector2Int>();
+    [Header("Walls (fixed for all levels)")]
+    public LayerMask wallMask;
+    public float wallCastRadius = 0.04f;
 
-    [Tooltip("完全不可进入的格子（可选）。尝试走进去时会被挡住，原地不动。")]
-    public List<Vector2Int> blockedCells = new List<Vector2Int>();
+    [Header("Visual (forced by code)")]
+    [Tooltip("强制把玩家放到这个 Sorting Layer。建议新建一个 Sorting Layer 叫 Player")]
+    public string playerSortingLayer = "Player";
 
-    [Header("Colors")]
+    [Tooltip("强制玩家排序（越大越在上面）")]
+    public int playerOrder = 999;
+
+    [Tooltip("玩家默认颜色（会强制 alpha=1）")]
+    public Color defaultColor = Color.white;
+
+    [Tooltip("到达 key 后的颜色（会强制 alpha=1）")]
     public Color keyReachedColor = Color.yellow;
 
     public Action OnExitReached;
@@ -33,12 +40,12 @@ public class GridMover : MonoBehaviour
     bool _hasKey;
 
     SpriteRenderer _sr;
-    Color _defaultColor;
 
     void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();
-        if (_sr != null) _defaultColor = _sr.color;
+        if (_sr == null)
+            _sr = GetComponentInChildren<SpriteRenderer>(true);
     }
 
     void Start()
@@ -46,29 +53,35 @@ public class GridMover : MonoBehaviour
         ResetToStart();
     }
 
-    void Update()
+    void LateUpdate()
     {
-        Vector2Int dir = Vector2Int.zero;
-
-        if (Input.GetKeyDown(KeyCode.W)) dir = Vector2Int.up;
-        else if (Input.GetKeyDown(KeyCode.S)) dir = Vector2Int.down;
-        else if (Input.GetKeyDown(KeyCode.A)) dir = Vector2Int.left;
-        else if (Input.GetKeyDown(KeyCode.D)) dir = Vector2Int.right;
-
-        if (dir != Vector2Int.zero)
-            TryMove(dir);
+        ForceVisible();
     }
 
-    public void ApplyLevel(Vector2Int start, Vector2Int key, Vector2Int exit, Color keyColor,
-        List<Vector2Int> downWalls, List<Vector2Int> blocked)
+    void Update()
+    {
+        Vector2Int step = Vector2Int.zero;
+
+        // WASD 或方向键都可移动（不改其它逻辑）
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            step = new Vector2Int(0, -1);
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            step = new Vector2Int(0, +1);
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            step = new Vector2Int(-1, 0);
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            step = new Vector2Int(+1, 0);
+
+        if (step != Vector2Int.zero)
+            TryMove(step);
+    }
+
+    public void ApplyLevel(Vector2Int start, Vector2Int key, Vector2Int exit, Color keyColor)
     {
         startCell = start;
         keyCell = key;
         exitCell = exit;
         keyReachedColor = keyColor;
-
-        downWallCells = downWalls ?? new List<Vector2Int>();
-        blockedCells = blocked ?? new List<Vector2Int>();
 
         ResetToStart();
     }
@@ -78,63 +91,93 @@ public class GridMover : MonoBehaviour
         _cell = startCell;
         _hasKey = false;
 
-        if (_sr != null) _sr.color = _defaultColor;
-
+        SetPlayerColor(defaultColor);
         SnapToCell(_cell);
     }
 
-    void TryMove(Vector2Int dir)
+    void TryMove(Vector2Int step)
     {
-        // 规则：只有“向下走”时，若当前格子下方是墙 => 回起点
-        if (dir == Vector2Int.down && ContainsCell(downWallCells, _cell))
+        Vector2Int next = _cell + step;
+
+        if (!InBounds(next))
+            return;
+
+        if (HitsWallBetween(_cell, next))
         {
             ResetToStart();
             return;
         }
 
-        Vector2Int next = _cell + dir;
-
-        if (!InBounds(next))
-            return;
-
-        if (ContainsCell(blockedCells, next))
-            return;
-
         _cell = next;
         SnapToCell(_cell);
 
-        // 到达钥匙点：变色 + 获得钥匙
         if (!_hasKey && _cell == keyCell)
         {
             _hasKey = true;
-            if (_sr != null) _sr.color = keyReachedColor;
+            SetPlayerColor(keyReachedColor);
         }
 
-        // 到达终点：必须先到过钥匙点
         if (_hasKey && _cell == exitCell)
         {
             OnExitReached?.Invoke();
         }
     }
 
+    void SetPlayerColor(Color c)
+    {
+        c.a = 1f;
+        if (_sr != null) _sr.color = c;
+    }
+
+    void ForceVisible()
+    {
+        if (_sr == null) return;
+
+        _sr.enabled = true;
+
+        if (!string.IsNullOrEmpty(playerSortingLayer))
+            _sr.sortingLayerName = playerSortingLayer;
+
+        _sr.sortingOrder = playerOrder;
+
+        Color c = _sr.color;
+        if (c.a < 1f) { c.a = 1f; _sr.color = c; }
+
+        if (_sr.sprite == null)
+            Debug.LogWarning("[GridMover] Player SpriteRenderer has no Sprite assigned.");
+    }
+
+    bool HitsWallBetween(Vector2Int from, Vector2Int to)
+    {
+        if (origin == null) return false;
+
+        Vector2 a = CellToWorld(from);
+        Vector2 b = CellToWorld(to);
+
+        RaycastHit2D hit = Physics2D.CircleCast(
+            a,
+            wallCastRadius,
+            (b - a).normalized,
+            Vector2.Distance(a, b),
+            wallMask
+        );
+
+        return hit.collider != null;
+    }
+
     void SnapToCell(Vector2Int c)
     {
         if (origin == null) return;
+        transform.position = CellToWorld(c);
+    }
 
-        Vector3 pos = origin.position + new Vector3(c.x * cellSize, c.y * cellSize, 0f);
-        transform.position = pos;
+    Vector2 CellToWorld(Vector2Int c)
+    {
+        return (Vector2)origin.position + new Vector2(c.x * cellSize, -c.y * cellSize);
     }
 
     bool InBounds(Vector2Int c)
     {
         return c.x >= 0 && c.x < cols && c.y >= 0 && c.y < rows;
-    }
-
-    bool ContainsCell(List<Vector2Int> list, Vector2Int cell)
-    {
-        if (list == null) return false;
-        for (int i = 0; i < list.Count; i++)
-            if (list[i] == cell) return true;
-        return false;
     }
 }

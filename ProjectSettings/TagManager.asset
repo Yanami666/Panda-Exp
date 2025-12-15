@@ -13,8 +13,8 @@ TagManager:
   - Water
   - UI
   - ChessSlot
-  - 
-  - 
+  - wall
+  - player
   - 
   - 
   - 
@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: player
+    uniqueID: 1867679319
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
