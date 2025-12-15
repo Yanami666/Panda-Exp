@@ -4582,7 +4582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a59432f28054c5f8ef718a7a3064fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UnlockableItem
-  unlockId: Diary
+  unlockId: "\u6C99\u76D8ADiary"
   applyVisibilityOnStart: 1
   controlActiveState: 1
 --- !u!1 &2134241160

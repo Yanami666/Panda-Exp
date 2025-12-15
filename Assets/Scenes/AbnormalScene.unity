@@ -608,7 +608,7 @@ Transform:
   m_GameObject: {fileID: 98007172}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.295174, y: 0.37203652, z: 0}
+  m_LocalPosition: {x: -0.32414734, y: -0.36683422, z: 0}
   m_LocalScale: {x: 0.057356067, y: 0.111586936, z: 0.88162}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChessPuzzleManager
   totalSlots: 0
   successObject: {fileID: 1819236246}
-  puzzleRootToHide: {fileID: 0}
+  puzzleRootToHide: {fileID: 760390356}
   onPuzzleComplete:
     m_PersistentCalls:
       m_Calls: []
