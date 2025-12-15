@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class ClickOpen : MonoBehaviour
 {
-    [Header("Show/Hide Pages")]
-    public GameObject pageToShow;
+    [Header("Show Pages (can be multiple)")]
+    public GameObject[] pagesToShow;
+
+    [Header("Hide Pages")]
     public GameObject[] pagesToHide;
 
     [Header("Optional")]
@@ -20,8 +22,14 @@ public class ClickOpen : MonoBehaviour
             }
         }
 
-        if (pageToShow != null)
-            pageToShow.SetActive(true);
+        if (pagesToShow != null)
+        {
+            for (int i = 0; i < pagesToShow.Length; i++)
+            {
+                if (pagesToShow[i] != null)
+                    pagesToShow[i].SetActive(true);
+            }
+        }
 
         if (disableColliderAfterClick)
         {
