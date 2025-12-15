@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class PasswordPrompt : MonoBehaviour
 {
-    [Header("Root (Canvas or empty root)")]
+    [Header("Root (Canvas child / Prompt panel root)")]
     public GameObject root;
 
     [Header("TMP UI")]
@@ -35,6 +35,17 @@ public class PasswordPrompt : MonoBehaviour
         Hide();
     }
 
+    private void Update()
+    {
+        if (root == null || !root.activeSelf) return;
+
+        // 回车提交（包含小键盘回车）
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            Submit();
+        }
+    }
+
     public void Open(string password, Action successAction, string hintOverride = null)
     {
         expectedPassword = password;
@@ -48,11 +59,10 @@ public class PasswordPrompt : MonoBehaviour
         if (inputField != null)
         {
             inputField.text = "";
-            FocusInputNextFrame();
-        }
-        else
-        {
-            Debug.LogError("PasswordPrompt: TMP_InputField 未绑定");
+            inputField.interactable = true;
+
+            if (focusCoroutine != null) StopCoroutine(focusCoroutine);
+            focusCoroutine = StartCoroutine(FocusNextFrame());
         }
     }
 
@@ -64,69 +74,43 @@ public class PasswordPrompt : MonoBehaviour
 
         if (typed == expectedPassword)
         {
-            Action cb = onSuccess;
             Hide();
-            cb?.Invoke();
+            onSuccess?.Invoke();
+            return;
         }
-        else
-        {
-            if (hintText != null)
-                hintText.text = wrongHint;
 
-            inputField.text = "";
-            FocusInputNextFrame();
-        }
+        // 错误：清空 + 提示
+        inputField.text = "";
+        if (hintText != null) hintText.text = wrongHint;
+
+        // 重新聚焦方便继续输
+        if (focusCoroutine != null) StopCoroutine(focusCoroutine);
+        focusCoroutine = StartCoroutine(FocusNextFrame());
     }
 
-    public void Hide()
+    public void Close()
     {
-        expectedPassword = null;
-        onSuccess = null;
+        Hide();
+    }
 
-        if (hintText != null)
-            hintText.text = "";
+    private IEnumerator FocusNextFrame()
+    {
+        yield return null;
 
-        if (inputField != null)
-            inputField.text = "";
+        if (inputField == null) yield break;
 
-        if (focusCoroutine != null)
-            StopCoroutine(focusCoroutine);
-
-        focusCoroutine = null;
-
-        if (root != null)
-            root.SetActive(false);
-        else
-            gameObject.SetActive(false);
+        EventSystem.current?.SetSelectedGameObject(null);
+        inputField.Select();
+        inputField.ActivateInputField();
     }
 
     private void Show()
     {
-        if (root != null)
-            root.SetActive(true);
-        else
-            gameObject.SetActive(true);
+        if (root != null) root.SetActive(true);
     }
 
-    private void FocusInputNextFrame()
+    private void Hide()
     {
-        if (focusCoroutine != null)
-            StopCoroutine(focusCoroutine);
-
-        focusCoroutine = StartCoroutine(FocusRoutine());
-    }
-
-    private IEnumerator FocusRoutine()
-    {
-        yield return null;
-
-        if (EventSystem.current != null && inputField != null)
-        {
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(inputField.gameObject);
-
-            inputField.ActivateInputField();
-            inputField.Select();
-        }
+        if (root != null) root.SetActive(false);
     }
 }

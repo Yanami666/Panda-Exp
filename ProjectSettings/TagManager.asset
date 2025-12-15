@@ -43,6 +43,9 @@ TagManager:
   - name: player
     uniqueID: 1867679319
     locked: 0
+  - name: puzzel
+    uniqueID: 1978654883
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
