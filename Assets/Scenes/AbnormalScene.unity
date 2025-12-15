@@ -1482,6 +1482,9 @@ MonoBehaviour:
   totalSlots: 0
   successObject: {fileID: 1819236246}
   puzzleRootToHide: {fileID: 760390356}
+  moveSuccessToCameraCenter: 1
+  forceSuccessOnTop: 1
+  successSortingOrder: 999
   onPuzzleComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -5675,6 +5678,9 @@ MonoBehaviour:
   totalSlots: 0
   successObject: {fileID: 1994988834}
   puzzleRootToHide: {fileID: 1248783485}
+  moveSuccessToCameraCenter: 1
+  forceSuccessOnTop: 1
+  successSortingOrder: 999
   onPuzzleComplete:
     m_PersistentCalls:
       m_Calls:
@@ -7705,7 +7711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1565974851
 Transform:
   m_ObjectHideFlags: 0
