@@ -1289,7 +1289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &824032381
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1411,7 +1411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClickOpen
   pagesToShow: []
   pagesToHide:
-  - {fileID: 824032380}
+  - {fileID: 390306566}
   disableColliderAfterClick: 0
 --- !u!61 &999852222
 BoxCollider2D:
@@ -2698,7 +2698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1815933803
 Transform:
   m_ObjectHideFlags: 0
