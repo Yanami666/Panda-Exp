@@ -23,13 +23,22 @@ public class TwoStageClockPuzzle : MonoBehaviour
     public Color wrongColor = Color.red;
     public Color lockedColor = Color.gray;
 
+    [Header("Reveal On Stage 2 Solved")]
+    public GameObject revealSpriteRoot;   // 这里放你要弹出的那张 sprite 的物体（建议一开始隐藏）
+    public bool hideRevealOnStart = true;
+
     private bool stage1Solved = false;
     private bool stage2Solved = false;
+
+    private bool hasRevealed = false;
 
     private void Start()
     {
         if (stage1Box != null) stage1Box.color = wrongColor;
         if (stage2Box != null) stage2Box.color = lockedColor;
+
+        if (revealSpriteRoot != null && hideRevealOnStart)
+            revealSpriteRoot.SetActive(false);
     }
 
     private void Update()
@@ -61,6 +70,14 @@ public class TwoStageClockPuzzle : MonoBehaviour
 
             if (stage2Box != null)
                 stage2Box.color = solved2 ? correctColor : wrongColor;
+
+            // 只在第二阶段第一次变成 solved 的那一刻弹出
+            if (stage2Solved && !hasRevealed)
+            {
+                hasRevealed = true;
+                if (revealSpriteRoot != null)
+                    revealSpriteRoot.SetActive(true);
+            }
         }
     }
 
