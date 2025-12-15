@@ -5059,9 +5059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724101a3e9c784e6fbe0286767cbdedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickOpen
-  pagesToShow:
-  - {fileID: 1997385791}
-  pagesToHide: []
+  pagesToShow: []
+  pagesToHide:
+  - {fileID: 134129441}
   disableColliderAfterClick: 0
 --- !u!61 &1859391693
 BoxCollider2D:
