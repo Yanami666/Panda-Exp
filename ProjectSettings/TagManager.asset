@@ -40,17 +40,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: player
-    uniqueID: 1867679319
-    locked: 0
-  - name: puzzel
+  - name: window
     uniqueID: 1978654883
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: PuzzleTop
+  - name: Desktop
     uniqueID: 3073686247
+    locked: 0
+  - name: puzzel
+    uniqueID: 1867679319
     locked: 0
   m_RenderingLayers:
   - Default
