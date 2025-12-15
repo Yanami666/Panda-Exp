@@ -63,5 +63,17 @@ public class RevealClickableSquare : MonoBehaviour
 
         if (closeIcon != null)
             closeIcon.SetActive(false);
+
+        // ✅ 兜底：如果你曾经打开过某个 overlay，但关闭路径没走到 ClickToClosePuzzle，
+        // 这里也可以释放锁，避免所有 ClickableSquare 被 puzzleOpen 卡死。
+        PuzzleManager.puzzleOpen = false;
+
+        // 额外保险：如果你有 EdgePanCamera2D，也允许相机恢复
+        Camera mainCam = Camera.main;
+        if (mainCam != null)
+        {
+            var pan = mainCam.GetComponent<EdgePanCamera2D>();
+            if (pan != null) pan.canPan = true;
+        }
     }
 }
