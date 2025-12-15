@@ -39,7 +39,6 @@ public class PasswordPrompt : MonoBehaviour
     {
         if (root == null || !root.activeSelf) return;
 
-        // 回车提交（包含小键盘回车）
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             Submit();
@@ -61,13 +60,15 @@ public class PasswordPrompt : MonoBehaviour
             inputField.text = "";
             inputField.interactable = true;
 
-            if (focusCoroutine != null) StopCoroutine(focusCoroutine);
-            focusCoroutine = StartCoroutine(FocusNextFrame());
+            StopFocusCoroutine();
+            StartFocusCoroutine();
         }
     }
 
     public void Submit()
     {
+        // 如果 UI 根本没显示，就不要继续（避免切场景/隐藏时误触发）
+        if (root == null || !root.activeInHierarchy) return;
         if (inputField == null) return;
 
         string typed = inputField.text ?? "";
@@ -79,13 +80,11 @@ public class PasswordPrompt : MonoBehaviour
             return;
         }
 
-        // 错误：清空 + 提示
         inputField.text = "";
         if (hintText != null) hintText.text = wrongHint;
 
-        // 重新聚焦方便继续输
-        if (focusCoroutine != null) StopCoroutine(focusCoroutine);
-        focusCoroutine = StartCoroutine(FocusNextFrame());
+        StopFocusCoroutine();
+        StartFocusCoroutine();
     }
 
     public void Close()
@@ -93,10 +92,33 @@ public class PasswordPrompt : MonoBehaviour
         Hide();
     }
 
+    private void StartFocusCoroutine()
+    {
+        if (CoroutineRunner.Instance == null)
+        {
+            UnityEngine.Debug.LogError("CoroutineRunner.Instance not found. Please add CoroutineRunner to a DontDestroyOnLoad object.");
+            return;
+        }
+
+        focusCoroutine = CoroutineRunner.Instance.StartCoroutine(FocusNextFrame());
+    }
+
+    private void StopFocusCoroutine()
+    {
+        if (focusCoroutine == null) return;
+
+        if (CoroutineRunner.Instance != null)
+            CoroutineRunner.Instance.StopCoroutine(focusCoroutine);
+
+        focusCoroutine = null;
+    }
+
     private IEnumerator FocusNextFrame()
     {
         yield return null;
 
+        // 如果这时 UI 已经被隐藏/切走了，就不要再抢焦点
+        if (root == null || !root.activeInHierarchy) yield break;
         if (inputField == null) yield break;
 
         EventSystem.current?.SetSelectedGameObject(null);
