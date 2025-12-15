@@ -363,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &353544316
 Transform:
   m_ObjectHideFlags: 0
@@ -373,11 +373,11 @@ Transform:
   m_GameObject: {fileID: 353544315}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.03, y: 0.3, z: 0}
+  m_LocalPosition: {x: 0.77, y: -0.59000003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1550240985}
+  m_Father: {fileID: 1938655054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &353544317
 BoxCollider2D:
@@ -1090,7 +1090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &754393240
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1158,8 +1158,8 @@ Transform:
   m_GameObject: {fileID: 754393239}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02311, y: 0.00689, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0038, y: -0.0469, z: 0}
+  m_LocalScale: {x: 0.9243857, y: 0.92033523, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 367585511}
@@ -1250,8 +1250,8 @@ Transform:
   m_GameObject: {fileID: 773278724}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.00034529547, w: 0.99999994}
-  m_LocalPosition: {x: -0.02311, y: 0.00689, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0231, y: 0.0338, z: 0}
+  m_LocalScale: {x: 0.9271759, y: 0.92543375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 700376424}
@@ -1871,12 +1871,11 @@ Transform:
   m_GameObject: {fileID: 1550240983}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.31, y: 0.21, z: 0}
+  m_LocalPosition: {x: -1.09, y: -0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1938655054}
-  - {fileID: 353544316}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1688183801
@@ -2146,7 +2145,8 @@ Transform:
   m_LocalPosition: {x: 1.26, y: 0.89000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 353544316}
   m_Father: {fileID: 1550240985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1938655055
@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 118347a1220304e9289824f43de89f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PasswordGate
-  password: 12346
+  password: 1234
   hint: 
   pageToShow: {fileID: 1400135721}
   pagesToHide:
@@ -2365,7 +2365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6273585, b: 0.8526112, a: 0.57254905}
+  m_Color: {r: 0.6981132, g: 0.5828587, b: 0.65201145, a: 0.3764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2406,7 +2406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2108623969
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2474,8 +2474,8 @@ Transform:
   m_GameObject: {fileID: 2108623968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02311, y: 0.00689, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.05, y: 0.0069, z: 0}
+  m_LocalScale: {x: 0.92438143, y: 0.92035174, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 820961502}
