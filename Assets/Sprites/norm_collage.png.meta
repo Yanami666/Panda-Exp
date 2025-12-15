@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5308a072558fb48789d0b416ea71fcb7
+guid: bdff8f4987ed54ece9eba8d7990b25a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3742114031226371421
-    second: bg_img2_0
+      213: 3299535762821684392
+    second: norm_collage_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg_img2_0
+      name: norm_collage_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2880
-        height: 1080
+        x: 312
+        y: 607
+        width: 80
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a24fbb7d17511cc0800000000000000
-      internalID: -3742114031226371421
+      spriteID: 8ac1faa6b4e4acd20800000000000000
+      internalID: 3299535762821684392
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bg_img2_0: -3742114031226371421
+      norm_collage_0: 3299535762821684392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
