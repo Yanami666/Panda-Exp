@@ -1280,6 +1280,23 @@ MonoBehaviour:
   minX: -4.48
   maxX: 4.48
   canPan: 1
+--- !u!1 &412512972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6454894858643132750, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+  m_PrefabInstance: {fileID: 1379685605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &412512977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412512972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20051fc5ae8ed4454ba50459e266064c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoToPcAOnClick
 --- !u!1 &441969321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1694,9 @@ MonoBehaviour:
   totalSlots: 0
   successObject: {fileID: 2077833047}
   puzzleRootToHide: {fileID: 227225739}
+  moveSuccessToCameraCenter: 1
+  forceSuccessOnTop: 1
+  successSortingOrder: 999
   onPuzzleComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -3486,14 +3506,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 749813322344238168, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_Size.x
+      value: 3.6677437
+      objectReference: {fileID: 0}
+    - target: {fileID: 749813322344238168, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3018591
+      objectReference: {fileID: 0}
+    - target: {fileID: 749813322344238168, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.117381096
+      objectReference: {fileID: 0}
+    - target: {fileID: 749813322344238168, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2454325
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309586020636154992, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: closeIcon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309586020636154992, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: objectToActivate
+      value: 
+      objectReference: {fileID: 412512972}
+    - target: {fileID: 3624618098236161234, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624618098236161234, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_Size.y
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624618098236161234, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3624618098236161234, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6454894858643132750, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
       propertyPath: m_Name
-      value: ClickableSquare_PC2
+      value: ClickableSquare_PCA
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3309586020636154992, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6454894858643132750, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 412512977}
   m_SourcePrefab: {fileID: 100100000, guid: edfede4f8dee141af89ac1ac66694e48, type: 3}
 --- !u!1 &1481678838
 GameObject:
@@ -4060,7 +4124,6 @@ MonoBehaviour:
   topLeft: {x: -4, y: 4}
   cellSize: 1
   noteObject: {fileID: 1873478607}
-  noteLocalOffset: {x: 4.5, y: -4.5, z: 0}
   forceNoteOnTop: 1
   noteSortingOrder: 50
 --- !u!1 &1873478607
@@ -4076,7 +4139,7 @@ GameObject:
   - component: {fileID: 1873478610}
   m_Layer: 0
   m_Name: Note
-  m_TagString: Unlockable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4536,6 +4599,66 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2068166886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2068166888}
+  - component: {fileID: 2068166887}
+  - component: {fileID: 2068166889}
+  m_Layer: 0
+  m_Name: _SceneSwapManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2068166887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068166886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78491a74c32f5493592ddd5d9ed0e29e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneSwapManager
+  normalSceneName: NormalScene
+  pcASceneName: Pc a
+  keepPcALoaded: 1
+--- !u!4 &2068166888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068166886}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.8089, y: -3.93933, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2068166889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2068166886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c8ea404e7b04583ab88e78982d5374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoroutineRunner
 --- !u!1 &2077833047
 GameObject:
   m_ObjectHideFlags: 0
@@ -4891,3 +5014,4 @@ SceneRoots:
   - {fileID: 73522930}
   - {fileID: 229899845}
   - {fileID: 1379685605}
+  - {fileID: 2068166888}

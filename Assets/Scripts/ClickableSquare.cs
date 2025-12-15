@@ -2,10 +2,6 @@ using UnityEngine;
 
 public class ClickableSquare : MonoBehaviour
 {
-    [Header("Colors")]
-    public Color normalColor = Color.white;
-    public Color clickedColor = Color.green;
-
     [Header("This Square Will Activate This Object")]
     public GameObject objectToActivate;  // 比如 PuzzleOverlay_数独
 
@@ -14,14 +10,10 @@ public class ClickableSquare : MonoBehaviour
     public Vector2 closeIconViewportPos = new Vector2(0.92f, 0.88f); // 屏幕右上角附近（0~1）
     public Vector3 closeIconWorldOffset = Vector3.zero; // 细调（可空）
 
-    private SpriteRenderer sr;
     private EdgePanCamera2D cameraPan;
 
     void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
-        if (sr != null) sr.color = normalColor;
-
         Camera mainCam = Camera.main;
         if (mainCam != null)
             cameraPan = mainCam.GetComponent<EdgePanCamera2D>();
@@ -31,9 +23,6 @@ public class ClickableSquare : MonoBehaviour
     {
         if (PuzzleManager.puzzleOpen)
             return;
-
-        if (sr != null)
-            sr.color = clickedColor;
 
         if (objectToActivate != null)
         {
@@ -68,15 +57,13 @@ public class ClickableSquare : MonoBehaviour
         Camera cam = Camera.main;
         if (cam == null) return;
 
-        // 用 icon 当前的 Z（避免跑到相机后面/前面）
         float z = icon.position.z;
 
-        // 把 viewport(0~1) 转成世界坐标
-        Vector3 world = cam.ViewportToWorldPoint(new Vector3(viewport01.x, viewport01.y, -cam.transform.position.z));
+        Vector3 world = cam.ViewportToWorldPoint(
+            new Vector3(viewport01.x, viewport01.y, -cam.transform.position.z)
+        );
 
-        // 保持 icon 的 Z
         world.z = z;
-
         icon.position = world + worldOffset;
     }
 }
